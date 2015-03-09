@@ -25,7 +25,16 @@ class OSTStartViewController: UIViewController {
 
     @IBAction func didTapLoadContactsButton(sender: AnyObject) {
         loadingIndicator.startAnimating()
+        
+        // do some address book loading here, then show the contacts when it's done.
+        self.showContacts()
     }
 
+    private func showContacts() {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil);
+        let contactViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ContactsViewController") as UIViewController
+        var nav : UINavigationController = UINavigationController(rootViewController: contactViewController)
+        self.showViewController(nav, sender: self)
+    }
 }
 

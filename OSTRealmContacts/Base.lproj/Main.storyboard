@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="309" y="429"/>
         </scene>
-        <!--View Controller-->
+        <!--Contacts View Controller-->
         <scene sceneID="Lff-oe-7Bf">
             <objects>
-                <viewController id="jBl-Aa-qfr" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContactsViewController" id="jBl-Aa-qfr" customClass="OSTContactsViewController" customModule="OSTRealmContacts" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zk1-em-Na8"/>
                         <viewControllerLayoutGuide type="bottom" id="mbf-cK-Q01"/>
@@ -58,7 +58,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Table View Goes Here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aoz-jJ-2Vz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Table View Goes Here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aoz-jJ-2Vz">
                                 <rect key="frame" x="216" y="47" width="168" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -66,6 +66,10 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Aoz-jJ-2Vz" firstAttribute="top" secondItem="zk1-em-Na8" secondAttribute="bottom" constant="27" id="WLO-0m-IW0"/>
+                            <constraint firstAttribute="centerX" secondItem="Aoz-jJ-2Vz" secondAttribute="centerX" id="hXq-JR-pQ3"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SDc-5F-0ZJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
