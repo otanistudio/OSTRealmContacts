@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5CFCF7891AAD203800B63FF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCF7881AAD203800B63FF2 /* AppDelegate.swift */; };
-		5CFCF78B1AAD203800B63FF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCF78A1AAD203800B63FF2 /* ViewController.swift */; };
+		5CFCF7891AAD203800B63FF2 /* OSTContactsAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCF7881AAD203800B63FF2 /* OSTContactsAppDelegate.swift */; };
+		5CFCF78B1AAD203800B63FF2 /* OSTContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCF78A1AAD203800B63FF2 /* OSTContactsViewController.swift */; };
 		5CFCF78E1AAD203800B63FF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CFCF78C1AAD203800B63FF2 /* Main.storyboard */; };
 		5CFCF7901AAD203800B63FF2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CFCF78F1AAD203800B63FF2 /* Images.xcassets */; };
 		5CFCF7931AAD203800B63FF2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CFCF7911AAD203800B63FF2 /* LaunchScreen.xib */; };
@@ -56,8 +56,8 @@
 /* Begin PBXFileReference section */
 		5CFCF7831AAD203800B63FF2 /* OSTRealmContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSTRealmContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CFCF7871AAD203800B63FF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5CFCF7881AAD203800B63FF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5CFCF78A1AAD203800B63FF2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5CFCF7881AAD203800B63FF2 /* OSTContactsAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSTContactsAppDelegate.swift; sourceTree = "<group>"; };
+		5CFCF78A1AAD203800B63FF2 /* OSTContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSTContactsViewController.swift; sourceTree = "<group>"; };
 		5CFCF78D1AAD203800B63FF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5CFCF78F1AAD203800B63FF2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5CFCF7921AAD203800B63FF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -107,8 +107,8 @@
 		5CFCF7851AAD203800B63FF2 /* OSTRealmContacts */ = {
 			isa = PBXGroup;
 			children = (
-				5CFCF7881AAD203800B63FF2 /* AppDelegate.swift */,
-				5CFCF78A1AAD203800B63FF2 /* ViewController.swift */,
+				5CFCF7881AAD203800B63FF2 /* OSTContactsAppDelegate.swift */,
+				5CFCF78A1AAD203800B63FF2 /* OSTContactsViewController.swift */,
 				5CFCF78C1AAD203800B63FF2 /* Main.storyboard */,
 				5CFCF78F1AAD203800B63FF2 /* Images.xcassets */,
 				5CFCF7911AAD203800B63FF2 /* LaunchScreen.xib */,
@@ -306,8 +306,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CFCF78B1AAD203800B63FF2 /* ViewController.swift in Sources */,
-				5CFCF7891AAD203800B63FF2 /* AppDelegate.swift in Sources */,
+				5CFCF78B1AAD203800B63FF2 /* OSTContactsViewController.swift in Sources */,
+				5CFCF7891AAD203800B63FF2 /* OSTContactsAppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
