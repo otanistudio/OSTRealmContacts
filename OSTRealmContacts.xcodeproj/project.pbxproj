@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5CFCF7891AAD203800B63FF2 /* OSTContactsAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCF7881AAD203800B63FF2 /* OSTContactsAppDelegate.swift */; };
-		5CFCF78B1AAD203800B63FF2 /* OSTContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCF78A1AAD203800B63FF2 /* OSTContactsViewController.swift */; };
+		5CFCF78B1AAD203800B63FF2 /* OSTStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCF78A1AAD203800B63FF2 /* OSTStartViewController.swift */; };
 		5CFCF78E1AAD203800B63FF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CFCF78C1AAD203800B63FF2 /* Main.storyboard */; };
 		5CFCF7901AAD203800B63FF2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CFCF78F1AAD203800B63FF2 /* Images.xcassets */; };
 		5CFCF7931AAD203800B63FF2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CFCF7911AAD203800B63FF2 /* LaunchScreen.xib */; };
 		5CFCF79F1AAD203800B63FF2 /* OSTRealmContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCF79E1AAD203800B63FF2 /* OSTRealmContactsTests.swift */; };
+		5CFCF8251AAD266900B63FF2 /* RHAddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CFCF8201AAD23D100B63FF2 /* RHAddressBook.framework */; };
+		5CFCF8271AAD267300B63FF2 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CFCF8261AAD267300B63FF2 /* AddressBook.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +59,7 @@
 		5CFCF7831AAD203800B63FF2 /* OSTRealmContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSTRealmContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CFCF7871AAD203800B63FF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CFCF7881AAD203800B63FF2 /* OSTContactsAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSTContactsAppDelegate.swift; sourceTree = "<group>"; };
-		5CFCF78A1AAD203800B63FF2 /* OSTContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSTContactsViewController.swift; sourceTree = "<group>"; };
+		5CFCF78A1AAD203800B63FF2 /* OSTStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSTStartViewController.swift; sourceTree = "<group>"; };
 		5CFCF78D1AAD203800B63FF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5CFCF78F1AAD203800B63FF2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5CFCF7921AAD203800B63FF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 		5CFCF79D1AAD203800B63FF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CFCF79E1AAD203800B63FF2 /* OSTRealmContactsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSTRealmContactsTests.swift; sourceTree = "<group>"; };
 		5CFCF8161AAD23D100B63FF2 /* RHAddressBook.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RHAddressBook.xcodeproj; path = Externals/RHAddressBook/RHAddressBook.xcodeproj; sourceTree = "<group>"; };
+		5CFCF8261AAD267300B63FF2 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CFCF8271AAD267300B63FF2 /* AddressBook.framework in Frameworks */,
+				5CFCF8251AAD266900B63FF2 /* RHAddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +93,7 @@
 		5CFCF77A1AAD203800B63FF2 = {
 			isa = PBXGroup;
 			children = (
+				5CFCF8261AAD267300B63FF2 /* AddressBook.framework */,
 				5CFCF7851AAD203800B63FF2 /* OSTRealmContacts */,
 				5CFCF79B1AAD203800B63FF2 /* OSTRealmContactsTests */,
 				5CFCF7A81AAD21BD00B63FF2 /* Externals */,
@@ -108,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				5CFCF7881AAD203800B63FF2 /* OSTContactsAppDelegate.swift */,
-				5CFCF78A1AAD203800B63FF2 /* OSTContactsViewController.swift */,
+				5CFCF78A1AAD203800B63FF2 /* OSTStartViewController.swift */,
 				5CFCF78C1AAD203800B63FF2 /* Main.storyboard */,
 				5CFCF78F1AAD203800B63FF2 /* Images.xcassets */,
 				5CFCF7911AAD203800B63FF2 /* LaunchScreen.xib */,
@@ -306,7 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CFCF78B1AAD203800B63FF2 /* OSTContactsViewController.swift in Sources */,
+				5CFCF78B1AAD203800B63FF2 /* OSTStartViewController.swift in Sources */,
 				5CFCF7891AAD203800B63FF2 /* OSTContactsAppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

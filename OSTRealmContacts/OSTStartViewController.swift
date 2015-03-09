@@ -8,8 +8,11 @@
 
 import UIKit
 
-class OSTContactsViewController: UIViewController {
+class OSTStartViewController: UIViewController {
 
+    @IBOutlet weak var loadContactsButton: UIButton!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +23,9 @@ class OSTContactsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func didTapLoadContactsButton(sender: AnyObject) {
+        loadingIndicator.startAnimating()
+    }
 
 }
 
