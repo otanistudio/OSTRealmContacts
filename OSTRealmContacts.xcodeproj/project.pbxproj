@@ -61,6 +61,7 @@
 			children = (
 				5CFCF7851AAD203800B63FF2 /* OSTRealmContacts */,
 				5CFCF79B1AAD203800B63FF2 /* OSTRealmContactsTests */,
+				5CFCF7A81AAD21BD00B63FF2 /* Externals */,
 				5CFCF7841AAD203800B63FF2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -110,6 +111,13 @@
 				5CFCF79D1AAD203800B63FF2 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5CFCF7A81AAD21BD00B63FF2 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Externals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

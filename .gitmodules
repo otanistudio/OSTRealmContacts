@@ -1,0 +1,3 @@
+[submodule "Externals/RHAddressBook"]
+	path = Externals/RHAddressBook
+	url = https://github.com/otanistudio/RHAddressBook
