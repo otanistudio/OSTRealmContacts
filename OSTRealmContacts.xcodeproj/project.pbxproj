@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C918C5E1AADE59F006A18FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C918C5D1AADE59F006A18FA /* Foundation.framework */; };
+		5CBC38A31AB517CA009EF24F /* libRHAddressBookUniversal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBC38A21AB517CA009EF24F /* libRHAddressBookUniversal.a */; };
 		5CFCF7891AAD203800B63FF2 /* OSTContactsAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCF7881AAD203800B63FF2 /* OSTContactsAppDelegate.swift */; };
 		5CFCF78B1AAD203800B63FF2 /* OSTStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCF78A1AAD203800B63FF2 /* OSTStartViewController.swift */; };
 		5CFCF78E1AAD203800B63FF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CFCF78C1AAD203800B63FF2 /* Main.storyboard */; };
 		5CFCF7901AAD203800B63FF2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CFCF78F1AAD203800B63FF2 /* Images.xcassets */; };
 		5CFCF7931AAD203800B63FF2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CFCF7911AAD203800B63FF2 /* LaunchScreen.xib */; };
 		5CFCF79F1AAD203800B63FF2 /* OSTRealmContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCF79E1AAD203800B63FF2 /* OSTRealmContactsTests.swift */; };
-		5CFCF8251AAD266900B63FF2 /* RHAddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CFCF8201AAD23D100B63FF2 /* RHAddressBook.framework */; };
 		5CFCF8271AAD267300B63FF2 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CFCF8261AAD267300B63FF2 /* AddressBook.framework */; };
 		5CFCF82F1AAD31D600B63FF2 /* OSTContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCF82E1AAD31D600B63FF2 /* OSTContactsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -26,44 +27,25 @@
 			remoteGlobalIDString = 5CFCF7821AAD203800B63FF2;
 			remoteInfo = OSTRealmContacts;
 		};
-		5CFCF81D1AAD23D100B63FF2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CFCF8161AAD23D100B63FF2 /* RHAddressBook.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 13C9D500146C5A8600327D15;
-			remoteInfo = RHAddressBook;
-		};
-		5CFCF81F1AAD23D100B63FF2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CFCF8161AAD23D100B63FF2 /* RHAddressBook.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 13D15189193E7688003B0F45;
-			remoteInfo = RHAddressBook.framework;
-		};
-		5CFCF8211AAD23D100B63FF2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CFCF8161AAD23D100B63FF2 /* RHAddressBook.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 133DF0A81470F273005330C7;
-			remoteInfo = RHAddressBookTester;
-		};
-		5CFCF8231AAD23D100B63FF2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CFCF8161AAD23D100B63FF2 /* RHAddressBook.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 133DF0931470EE36005330C7;
-			remoteInfo = RHAddressBookLogicTests;
-		};
-		5CFCF8301AAD3B0800B63FF2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CFCF8161AAD23D100B63FF2 /* RHAddressBook.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 13D15188193E7688003B0F45;
-			remoteInfo = RHAddressBook.framework;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C918C5D1AADE59F006A18FA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5CBC38931AB517CA009EF24F /* AddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBook.h; sourceTree = "<group>"; };
+		5CBC38951AB517CA009EF24F /* NSThread+RHBlockAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSThread+RHBlockAdditions.h"; sourceTree = "<group>"; };
+		5CBC38961AB517CA009EF24F /* RHAddressBook_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHAddressBook_Private.h; sourceTree = "<group>"; };
+		5CBC38971AB517CA009EF24F /* RHAddressBookGeoResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHAddressBookGeoResult.h; sourceTree = "<group>"; };
+		5CBC38981AB517CA009EF24F /* RHAddressBookSharedServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHAddressBookSharedServices.h; sourceTree = "<group>"; };
+		5CBC38991AB517CA009EF24F /* RHAddressBookThreadMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHAddressBookThreadMain.h; sourceTree = "<group>"; };
+		5CBC389A1AB517CA009EF24F /* RHRecord_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHRecord_Private.h; sourceTree = "<group>"; };
+		5CBC389B1AB517CA009EF24F /* RHAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHAddressBook.h; sourceTree = "<group>"; };
+		5CBC389C1AB517CA009EF24F /* RHGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHGroup.h; sourceTree = "<group>"; };
+		5CBC389D1AB517CA009EF24F /* RHMultiValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHMultiValue.h; sourceTree = "<group>"; };
+		5CBC389E1AB517CA009EF24F /* RHPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHPerson.h; sourceTree = "<group>"; };
+		5CBC389F1AB517CA009EF24F /* RHPersonLabels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHPersonLabels.h; sourceTree = "<group>"; };
+		5CBC38A01AB517CA009EF24F /* RHRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHRecord.h; sourceTree = "<group>"; };
+		5CBC38A11AB517CA009EF24F /* RHSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHSource.h; sourceTree = "<group>"; };
+		5CBC38A21AB517CA009EF24F /* libRHAddressBookUniversal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRHAddressBookUniversal.a; path = lib/RHAddressBook/libRHAddressBookUniversal.a; sourceTree = "<group>"; };
 		5CFCF7831AAD203800B63FF2 /* OSTRealmContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSTRealmContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CFCF7871AAD203800B63FF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CFCF7881AAD203800B63FF2 /* OSTContactsAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSTContactsAppDelegate.swift; sourceTree = "<group>"; };
@@ -74,9 +56,9 @@
 		5CFCF7981AAD203800B63FF2 /* OSTRealmContactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSTRealmContactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CFCF79D1AAD203800B63FF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CFCF79E1AAD203800B63FF2 /* OSTRealmContactsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSTRealmContactsTests.swift; sourceTree = "<group>"; };
-		5CFCF8161AAD23D100B63FF2 /* RHAddressBook.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RHAddressBook.xcodeproj; path = Externals/RHAddressBook/RHAddressBook.xcodeproj; sourceTree = "<group>"; };
 		5CFCF8261AAD267300B63FF2 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		5CFCF82E1AAD31D600B63FF2 /* OSTContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTContactsViewController.swift; sourceTree = "<group>"; };
+		5CFCF8321AAD497E00B63FF2 /* OSTRealmContacts-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OSTRealmContacts-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +66,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C918C5E1AADE59F006A18FA /* Foundation.framework in Frameworks */,
 				5CFCF8271AAD267300B63FF2 /* AddressBook.framework in Frameworks */,
-				5CFCF8251AAD266900B63FF2 /* RHAddressBook.framework in Frameworks */,
+				5CBC38A31AB517CA009EF24F /* libRHAddressBookUniversal.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,9 +82,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5CBC38921AB517CA009EF24F /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				5CBC38931AB517CA009EF24F /* AddressBook.h */,
+				5CBC38941AB517CA009EF24F /* Private */,
+				5CBC389B1AB517CA009EF24F /* RHAddressBook.h */,
+				5CBC389C1AB517CA009EF24F /* RHGroup.h */,
+				5CBC389D1AB517CA009EF24F /* RHMultiValue.h */,
+				5CBC389E1AB517CA009EF24F /* RHPerson.h */,
+				5CBC389F1AB517CA009EF24F /* RHPersonLabels.h */,
+				5CBC38A01AB517CA009EF24F /* RHRecord.h */,
+				5CBC38A11AB517CA009EF24F /* RHSource.h */,
+			);
+			name = Headers;
+			path = lib/RHAddressBook/Headers;
+			sourceTree = "<group>";
+		};
+		5CBC38941AB517CA009EF24F /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				5CBC38951AB517CA009EF24F /* NSThread+RHBlockAdditions.h */,
+				5CBC38961AB517CA009EF24F /* RHAddressBook_Private.h */,
+				5CBC38971AB517CA009EF24F /* RHAddressBookGeoResult.h */,
+				5CBC38981AB517CA009EF24F /* RHAddressBookSharedServices.h */,
+				5CBC38991AB517CA009EF24F /* RHAddressBookThreadMain.h */,
+				5CBC389A1AB517CA009EF24F /* RHRecord_Private.h */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
 		5CFCF77A1AAD203800B63FF2 = {
 			isa = PBXGroup;
 			children = (
+				5C918C5D1AADE59F006A18FA /* Foundation.framework */,
 				5CFCF8261AAD267300B63FF2 /* AddressBook.framework */,
 				5CFCF7851AAD203800B63FF2 /* OSTRealmContacts */,
 				5CFCF79B1AAD203800B63FF2 /* OSTRealmContactsTests */,
@@ -137,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				5CFCF7871AAD203800B63FF2 /* Info.plist */,
+				5CFCF8321AAD497E00B63FF2 /* OSTRealmContacts-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -169,20 +184,10 @@
 		5CFCF8151AAD23C200B63FF2 /* RHAddressBook */ = {
 			isa = PBXGroup;
 			children = (
-				5CFCF8161AAD23D100B63FF2 /* RHAddressBook.xcodeproj */,
+				5CBC38921AB517CA009EF24F /* Headers */,
+				5CBC38A21AB517CA009EF24F /* libRHAddressBookUniversal.a */,
 			);
 			name = RHAddressBook;
-			sourceTree = "<group>";
-		};
-		5CFCF8171AAD23D100B63FF2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5CFCF81E1AAD23D100B63FF2 /* libRHAddressBook.a */,
-				5CFCF8201AAD23D100B63FF2 /* RHAddressBook.framework */,
-				5CFCF8221AAD23D100B63FF2 /* RHAddressBookTester.app */,
-				5CFCF8241AAD23D100B63FF2 /* RHAddressBookLogicTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +204,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				5CFCF8311AAD3B0800B63FF2 /* PBXTargetDependency */,
 			);
 			name = OSTRealmContacts;
 			productName = OSTRealmContacts;
@@ -253,12 +257,6 @@
 			mainGroup = 5CFCF77A1AAD203800B63FF2;
 			productRefGroup = 5CFCF7841AAD203800B63FF2 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 5CFCF8171AAD23D100B63FF2 /* Products */;
-					ProjectRef = 5CFCF8161AAD23D100B63FF2 /* RHAddressBook.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				5CFCF7821AAD203800B63FF2 /* OSTRealmContacts */,
@@ -266,37 +264,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		5CFCF81E1AAD23D100B63FF2 /* libRHAddressBook.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRHAddressBook.a;
-			remoteRef = 5CFCF81D1AAD23D100B63FF2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CFCF8201AAD23D100B63FF2 /* RHAddressBook.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = RHAddressBook.framework;
-			remoteRef = 5CFCF81F1AAD23D100B63FF2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CFCF8221AAD23D100B63FF2 /* RHAddressBookTester.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = RHAddressBookTester.app;
-			remoteRef = 5CFCF8211AAD23D100B63FF2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CFCF8241AAD23D100B63FF2 /* RHAddressBookLogicTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = RHAddressBookLogicTests.xctest;
-			remoteRef = 5CFCF8231AAD23D100B63FF2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5CFCF7811AAD203800B63FF2 /* Resources */ = {
@@ -344,11 +311,6 @@
 			isa = PBXTargetDependency;
 			target = 5CFCF7821AAD203800B63FF2 /* OSTRealmContacts */;
 			targetProxy = 5CFCF7991AAD203800B63FF2 /* PBXContainerItemProxy */;
-		};
-		5CFCF8311AAD3B0800B63FF2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RHAddressBook.framework;
-			targetProxy = 5CFCF8301AAD3B0800B63FF2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -455,9 +417,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/lib/RHAddressBook/Headers",
+				);
 				INFOPLIST_FILE = OSTRealmContacts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib/RHAddressBook",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OSTRealmContacts/OSTRealmContacts-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -465,9 +441,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/lib/RHAddressBook/Headers",
+				);
 				INFOPLIST_FILE = OSTRealmContacts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib/RHAddressBook",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OSTRealmContacts/OSTRealmContacts-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -524,6 +514,7 @@
 				5CFCF7A41AAD203800B63FF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5CFCF7A51AAD203800B63FF2 /* Build configuration list for PBXNativeTarget "OSTRealmContactsTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +523,7 @@
 				5CFCF7A71AAD203800B63FF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
