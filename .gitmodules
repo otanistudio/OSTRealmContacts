@@ -1,3 +1,3 @@
 [submodule "Externals/RHAddressBook"]
 	path = Externals/RHAddressBook
-	url = https://github.com/otanistudio/RHAddressBook
+	url = git@github.com:otanistudio/RHAddressBook.git
