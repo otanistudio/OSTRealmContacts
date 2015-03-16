@@ -12,6 +12,7 @@
 		5CBC39351AB63B1B009EF24F /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBC39341AB63B1B009EF24F /* Realm.framework */; };
 		5CBC39371AB63B92009EF24F /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBC39361AB63B92009EF24F /* libc++.dylib */; };
 		5CBC39391AB63C52009EF24F /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC39381AB63C52009EF24F /* RLMSupport.swift */; };
+		5CBC393C1AB63DD6009EF24F /* OSTPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC393B1AB63DD6009EF24F /* OSTPerson.swift */; };
 		5CE4686B1AB67F34000CAAC5 /* OSTPhoneUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE4686A1AB67F34000CAAC5 /* OSTPhoneUtility.swift */; };
 		5CFCF7891AAD203800B63FF2 /* OSTContactsAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCF7881AAD203800B63FF2 /* OSTContactsAppDelegate.swift */; };
 		5CFCF78B1AAD203800B63FF2 /* OSTStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCF78A1AAD203800B63FF2 /* OSTStartViewController.swift */; };
@@ -53,6 +54,7 @@
 		5CBC39341AB63B1B009EF24F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Externals/Realm/Realm.framework; sourceTree = "<group>"; };
 		5CBC39361AB63B92009EF24F /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		5CBC39381AB63C52009EF24F /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RLMSupport.swift; path = Externals/Realm/RLMSupport.swift; sourceTree = "<group>"; };
+		5CBC393B1AB63DD6009EF24F /* OSTPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTPerson.swift; path = Models/OSTPerson.swift; sourceTree = "<group>"; };
 		5CE4686A1AB67F34000CAAC5 /* OSTPhoneUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTPhoneUtility.swift; path = Utilities/OSTPhoneUtility.swift; sourceTree = "<group>"; };
 		5CFCF7831AAD203800B63FF2 /* OSTRealmContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSTRealmContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CFCF7871AAD203800B63FF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -131,6 +133,14 @@
 			name = Realm;
 			sourceTree = "<group>";
 		};
+		5CBC393A1AB63C84009EF24F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5CBC393B1AB63DD6009EF24F /* OSTPerson.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		5CE4686C1AB67F3D000CAAC5 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				5CE4686C1AB67F3D000CAAC5 /* Utility */,
+				5CBC393A1AB63C84009EF24F /* Models */,
 				5CFCF7881AAD203800B63FF2 /* OSTContactsAppDelegate.swift */,
 				5CFCF78A1AAD203800B63FF2 /* OSTStartViewController.swift */,
 				5CFCF78C1AAD203800B63FF2 /* Main.storyboard */,
@@ -323,6 +334,7 @@
 				5CFCF78B1AAD203800B63FF2 /* OSTStartViewController.swift in Sources */,
 				5CFCF82F1AAD31D600B63FF2 /* OSTContactsViewController.swift in Sources */,
 				5CBC39391AB63C52009EF24F /* RLMSupport.swift in Sources */,
+				5CBC393C1AB63DD6009EF24F /* OSTPerson.swift in Sources */,
 				5CE4686B1AB67F34000CAAC5 /* OSTPhoneUtility.swift in Sources */,
 				5CFCF7891AAD203800B63FF2 /* OSTContactsAppDelegate.swift in Sources */,
 			);
