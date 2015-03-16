@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		5C918C5E1AADE59F006A18FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C918C5D1AADE59F006A18FA /* Foundation.framework */; };
 		5CBC38A31AB517CA009EF24F /* libRHAddressBookUniversal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBC38A21AB517CA009EF24F /* libRHAddressBookUniversal.a */; };
+		5CBC39351AB63B1B009EF24F /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBC39341AB63B1B009EF24F /* Realm.framework */; };
+		5CBC39371AB63B92009EF24F /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBC39361AB63B92009EF24F /* libc++.dylib */; };
+		5CBC39391AB63C52009EF24F /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC39381AB63C52009EF24F /* RLMSupport.swift */; };
 		5CFCF7891AAD203800B63FF2 /* OSTContactsAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCF7881AAD203800B63FF2 /* OSTContactsAppDelegate.swift */; };
 		5CFCF78B1AAD203800B63FF2 /* OSTStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCF78A1AAD203800B63FF2 /* OSTStartViewController.swift */; };
 		5CFCF78E1AAD203800B63FF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CFCF78C1AAD203800B63FF2 /* Main.storyboard */; };
@@ -46,6 +49,9 @@
 		5CBC38A01AB517CA009EF24F /* RHRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHRecord.h; sourceTree = "<group>"; };
 		5CBC38A11AB517CA009EF24F /* RHSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHSource.h; sourceTree = "<group>"; };
 		5CBC38A21AB517CA009EF24F /* libRHAddressBookUniversal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRHAddressBookUniversal.a; path = lib/RHAddressBook/libRHAddressBookUniversal.a; sourceTree = "<group>"; };
+		5CBC39341AB63B1B009EF24F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Externals/Realm/Realm.framework; sourceTree = "<group>"; };
+		5CBC39361AB63B92009EF24F /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		5CBC39381AB63C52009EF24F /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RLMSupport.swift; path = Externals/Realm/RLMSupport.swift; sourceTree = "<group>"; };
 		5CFCF7831AAD203800B63FF2 /* OSTRealmContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSTRealmContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CFCF7871AAD203800B63FF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CFCF7881AAD203800B63FF2 /* OSTContactsAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSTContactsAppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CBC39371AB63B92009EF24F /* libc++.dylib in Frameworks */,
+				5CBC39351AB63B1B009EF24F /* Realm.framework in Frameworks */,
 				5C918C5E1AADE59F006A18FA /* Foundation.framework in Frameworks */,
 				5CFCF8271AAD267300B63FF2 /* AddressBook.framework in Frameworks */,
 				5CBC38A31AB517CA009EF24F /* libRHAddressBookUniversal.a in Frameworks */,
@@ -112,9 +120,19 @@
 			path = Private;
 			sourceTree = "<group>";
 		};
+		5CBC39331AB63A7D009EF24F /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				5CBC39381AB63C52009EF24F /* RLMSupport.swift */,
+				5CBC39341AB63B1B009EF24F /* Realm.framework */,
+			);
+			name = Realm;
+			sourceTree = "<group>";
+		};
 		5CFCF77A1AAD203800B63FF2 = {
 			isa = PBXGroup;
 			children = (
+				5CBC39361AB63B92009EF24F /* libc++.dylib */,
 				5C918C5D1AADE59F006A18FA /* Foundation.framework */,
 				5CFCF8261AAD267300B63FF2 /* AddressBook.framework */,
 				5CFCF7851AAD203800B63FF2 /* OSTRealmContacts */,
@@ -176,6 +194,7 @@
 		5CFCF7A81AAD21BD00B63FF2 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				5CBC39331AB63A7D009EF24F /* Realm */,
 				5CFCF8151AAD23C200B63FF2 /* RHAddressBook */,
 			);
 			name = Externals;
@@ -292,6 +311,7 @@
 			files = (
 				5CFCF78B1AAD203800B63FF2 /* OSTStartViewController.swift in Sources */,
 				5CFCF82F1AAD31D600B63FF2 /* OSTContactsViewController.swift in Sources */,
+				5CBC39391AB63C52009EF24F /* RLMSupport.swift in Sources */,
 				5CFCF7891AAD203800B63FF2 /* OSTContactsAppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +437,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/Realm",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -441,6 +465,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/Realm",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
