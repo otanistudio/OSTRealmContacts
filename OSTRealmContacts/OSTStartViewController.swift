@@ -15,7 +15,6 @@ class OSTStartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,16 +24,39 @@ class OSTStartViewController: UIViewController {
 
     @IBAction func didTapLoadContactsButton(sender: AnyObject) {
         loadingIndicator.startAnimating()
+        let manager = OSTABManager()
         
-        // do some address book loading here, then show the contacts when it's done.
-        self.showContacts()
+        weak var weakSelf = self
+        if (manager.hasPermission()) {
+            weakSelf!.beginFetch(manager)
+        } else {
+            manager.requestAuthorization({ (isGranted, permissionError) -> () in
+                if (isGranted) {
+                    weakSelf!.beginFetch(manager)
+                }
+            })
+        }
+    }
+    
+    private func beginFetch(manager: OSTABManager) {
+        weak var weakSelf = self
+        manager.copyRecords({ () -> () in
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    weakSelf!.loadingIndicator.stopAnimating()
+                    weakSelf!.showContacts()
+                })
+            }, failure: { () -> () in
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    weakSelf!.loadingIndicator.stopAnimating()
+                })
+        })
     }
 
     private func showContacts() {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil);
-        let contactViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ContactsViewController") as UIViewController
-        var nav : UINavigationController = UINavigationController(rootViewController: contactViewController)
-        self.showViewController(nav, sender: self)
+        let contactViewController = mainStoryboard.instantiateViewControllerWithIdentifier("sidContactsViewController") as UIViewController
+        self.parentViewController?.showViewController(contactViewController, sender: self)
     }
+
 }
 
