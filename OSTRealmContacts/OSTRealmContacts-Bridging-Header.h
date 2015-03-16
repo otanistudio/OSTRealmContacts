@@ -1,2 +1,6 @@
 #import "RHAddressBook.h"
+#import "RHRecord.h"
+#import "RHSource.h"
+#import "RHGroup.h"
 #import "RHPerson.h"
+#import "RHMultiValue.h"
