@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Realm
 
 class OSTABManager {
     let ab = RHAddressBook()
+    let realm = RLMRealm.inMemoryRealmWithIdentifier("OSTABManagerRealm")
 
     func hasPermission() -> Bool {
         return RHAddressBook.authorizationStatus() == RHAuthorizationStatus.Authorized
@@ -36,14 +38,18 @@ class OSTABManager {
         ostPerson.firstName = rhPerson.firstName
         ostPerson.lastName = rhPerson.lastName
         
-        println("ostPerson: \(ostPerson.fullName)")
+        realm.transactionWithBlock { () -> Void in
+            self.realm.addObject(ostPerson)
+        }
+
+//        println("ostPerson: \(ostPerson.fullName)")
 
         
         let rhPhoneNumbers = rhPerson.phoneNumbers.values as Array
         
         for rhNumber in rhPhoneNumbers {
             let n: NSString! = rhNumber as NSString
-            println(OSTPhoneUtility.normalizedPhoneStringFromString(n))
+//            println(OSTPhoneUtility.normalizedPhoneStringFromString(n))
         }
     }
     

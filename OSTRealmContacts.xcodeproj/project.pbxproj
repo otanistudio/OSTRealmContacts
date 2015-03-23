@@ -16,6 +16,7 @@
 		5CBC39391AB63C52009EF24F /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC39381AB63C52009EF24F /* RLMSupport.swift */; };
 		5CBC393C1AB63DD6009EF24F /* OSTPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC393B1AB63DD6009EF24F /* OSTPerson.swift */; };
 		5CE4686B1AB67F34000CAAC5 /* OSTPhoneUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE4686A1AB67F34000CAAC5 /* OSTPhoneUtility.swift */; };
+		5CE468751AB6A4A8000CAAC5 /* OSTContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE468741AB6A4A8000CAAC5 /* OSTContactCell.swift */; };
 		5CFCF7891AAD203800B63FF2 /* OSTContactsAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCF7881AAD203800B63FF2 /* OSTContactsAppDelegate.swift */; };
 		5CFCF78B1AAD203800B63FF2 /* OSTStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCF78A1AAD203800B63FF2 /* OSTStartViewController.swift */; };
 		5CFCF78E1AAD203800B63FF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CFCF78C1AAD203800B63FF2 /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 		5CBC39381AB63C52009EF24F /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RLMSupport.swift; path = Externals/Realm/RLMSupport.swift; sourceTree = "<group>"; };
 		5CBC393B1AB63DD6009EF24F /* OSTPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTPerson.swift; path = Models/OSTPerson.swift; sourceTree = "<group>"; };
 		5CE4686A1AB67F34000CAAC5 /* OSTPhoneUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTPhoneUtility.swift; path = Utilities/OSTPhoneUtility.swift; sourceTree = "<group>"; };
+		5CE468741AB6A4A8000CAAC5 /* OSTContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTContactCell.swift; path = Views/OSTContactCell.swift; sourceTree = "<group>"; };
 		5CFCF7831AAD203800B63FF2 /* OSTRealmContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSTRealmContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CFCF7871AAD203800B63FF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CFCF7881AAD203800B63FF2 /* OSTContactsAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSTContactsAppDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,14 @@
 			name = Utility;
 			sourceTree = "<group>";
 		};
+		5CE468731AB6A484000CAAC5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5CE468741AB6A4A8000CAAC5 /* OSTContactCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		5CFCF77A1AAD203800B63FF2 = {
 			isa = PBXGroup;
 			children = (
@@ -176,16 +186,17 @@
 		5CFCF7851AAD203800B63FF2 /* OSTRealmContacts */ = {
 			isa = PBXGroup;
 			children = (
+				5CE468731AB6A484000CAAC5 /* Views */,
 				5CE4686C1AB67F3D000CAAC5 /* Utility */,
 				5CBC393A1AB63C84009EF24F /* Models */,
 				5CFCF7881AAD203800B63FF2 /* OSTContactsAppDelegate.swift */,
 				5CFCF78A1AAD203800B63FF2 /* OSTStartViewController.swift */,
+				5CBC39311AB61F4C009EF24F /* OSTContactsViewController.swift */,
+				5C918C5B1AAD5129006A18FA /* OSTABManager.swift */,
 				5CFCF78C1AAD203800B63FF2 /* Main.storyboard */,
 				5CFCF78F1AAD203800B63FF2 /* Images.xcassets */,
 				5CFCF7911AAD203800B63FF2 /* LaunchScreen.xib */,
 				5CFCF7861AAD203800B63FF2 /* Supporting Files */,
-				5C918C5B1AAD5129006A18FA /* OSTABManager.swift */,
-				5CBC39311AB61F4C009EF24F /* OSTContactsViewController.swift */,
 			);
 			path = OSTRealmContacts;
 			sourceTree = "<group>";
@@ -337,6 +348,7 @@
 				5CFCF78B1AAD203800B63FF2 /* OSTStartViewController.swift in Sources */,
 				5C918C5C1AAD5129006A18FA /* OSTABManager.swift in Sources */,
 				5CBC39391AB63C52009EF24F /* RLMSupport.swift in Sources */,
+				5CE468751AB6A4A8000CAAC5 /* OSTContactCell.swift in Sources */,
 				5CBC393C1AB63DD6009EF24F /* OSTPerson.swift in Sources */,
 				5CBC39321AB61F4C009EF24F /* OSTContactsViewController.swift in Sources */,
 				5CE4686B1AB67F34000CAAC5 /* OSTPhoneUtility.swift in Sources */,
