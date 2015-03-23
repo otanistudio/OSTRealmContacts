@@ -17,7 +17,7 @@ class OSTABManager {
         return RHAddressBook.authorizationStatus() == RHAuthorizationStatus.Authorized
     }
     
-    func copyRecords(success:()->(), failure:()->()) {
+    func copyRecords(success:()->(), failure:(message: String)->()) {
         if (hasPermission()) {
             let people = ab.peopleOrderedByUsersPreference as [RHPerson]
             for rhPerson in people {
@@ -25,8 +25,7 @@ class OSTABManager {
             }
             success()
         } else {
-            println("no permission")
-            failure()
+            failure(message: "no permission")
         }
     }
     

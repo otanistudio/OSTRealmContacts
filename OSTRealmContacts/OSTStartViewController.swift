@@ -45,9 +45,15 @@ class OSTStartViewController: UIViewController {
                     weakSelf!.loadingIndicator.stopAnimating()
                     weakSelf!.showContacts()
                 })
-            }, failure: { () -> () in
+            }, failure: { (message: String) -> () in
+                let failAlert = UIAlertController.init(title: "Permission Required", message: message, preferredStyle: .Alert)
+                let alertAction = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.Default) { action -> Void in
+                }
+                failAlert.addAction(alertAction)
+                
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     weakSelf!.loadingIndicator.stopAnimating()
+                    self.presentViewController(failAlert, animated: false) { completion -> Void in }
                 })
         })
     }
