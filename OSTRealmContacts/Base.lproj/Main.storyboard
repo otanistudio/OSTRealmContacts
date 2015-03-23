@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bKc-jS-2yh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Start View Controller-->
@@ -61,13 +62,19 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e6h-m5-ZP6" id="Yk2-Vq-xh4">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Full Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2w-1r-RV2">
-                                            <rect key="frame" x="8" y="12" width="282" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2w-1r-RV2">
+                                            <rect key="frame" x="8" y="12" width="584" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="B2w-1r-RV2" firstAttribute="leading" secondItem="Yk2-Vq-xh4" secondAttribute="leadingMargin" id="2t9-3c-SnW"/>
+                                        <constraint firstItem="B2w-1r-RV2" firstAttribute="trailing" secondItem="Yk2-Vq-xh4" secondAttribute="trailingMargin" id="GPI-2D-V93"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="B2w-1r-RV2" secondAttribute="bottom" constant="3" id="mRH-je-0Vm"/>
+                                        <constraint firstItem="B2w-1r-RV2" firstAttribute="top" secondItem="Yk2-Vq-xh4" secondAttribute="topMargin" constant="4" id="s4A-o4-jq4"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="fullNameLabel" destination="B2w-1r-RV2" id="uVI-XR-pQ5"/>
@@ -83,7 +90,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NVo-MG-DDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="968" y="1132"/>
+            <point key="canvasLocation" x="968" y="1130"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lUQ-Mf-7Ud">
