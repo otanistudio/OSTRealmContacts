@@ -33,22 +33,23 @@ class OSTABManager {
         weak var weakSelf = self;
         
         var ostPerson = OSTPerson()
-        ostPerson.fullName = rhPerson.compositeName
-        ostPerson.firstName = rhPerson.firstName
-        ostPerson.lastName = rhPerson.lastName
+        ostPerson.fullName = rhPerson.compositeName != nil ? rhPerson.compositeName : "n/a"
+        ostPerson.firstName = rhPerson.firstName != nil ? rhPerson.firstName : ""
+        ostPerson.lastName = rhPerson.lastName != nil ? rhPerson.lastName : ""
         
         realm.transactionWithBlock { () -> Void in
             self.realm.addObject(ostPerson)
         }
-
-//        println("ostPerson: \(ostPerson.fullName)")
-
         
-        let rhPhoneNumbers = rhPerson.phoneNumbers.values as Array
+        let rhPhoneNumbers = rhPerson.phoneNumbers.values as Array?
         
-        for rhNumber in rhPhoneNumbers {
+        if rhPhoneNumbers == nil {
+            return;
+        }
+        
+        for rhNumber in rhPhoneNumbers! {
             let n: NSString! = rhNumber as NSString
-//            println(OSTPhoneUtility.normalizedPhoneStringFromString(n))
+            println(OSTPhoneUtility.normalizedPhoneStringFromString(n))
         }
     }
     
