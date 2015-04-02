@@ -18,8 +18,8 @@ class OSTABManager {
     }
     
     func copyRecords(success:()->(), failure:(message: String)->()) {
-        if (hasPermission()) {
-            let people = ab.peopleOrderedByUsersPreference as [RHPerson]
+        if (self.hasPermission()) {
+            let people = self.ab.peopleOrderedByUsersPreference as [RHPerson]
             for rhPerson in people {
                 self.writeRecordWithPerson(rhPerson)
             }
