@@ -28,6 +28,7 @@
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="uwQ-r6-zZT">
                                 <rect key="frame" x="290" y="230" width="20" height="20"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -86,7 +87,7 @@
                             <outlet property="delegate" destination="MuY-a7-aC0" id="rs5-e2-qCx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="VB3-ns-bcw"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="VB3-ns-bcw" userLabel="Contacts (via Realm)"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NVo-MG-DDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
