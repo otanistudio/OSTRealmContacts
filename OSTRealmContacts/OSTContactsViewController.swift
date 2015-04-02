@@ -22,6 +22,7 @@ class OSTContactsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Contacts via Realm"
     }
 
     override func didReceiveMemoryWarning() {
