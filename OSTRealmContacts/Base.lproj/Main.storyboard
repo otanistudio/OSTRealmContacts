@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bKc-jS-2yh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bKc-jS-2yh">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -30,19 +30,28 @@
                                 <rect key="frame" x="290" y="230" width="20" height="20"/>
                                 <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry, we need permission to access your contacts." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObK-Ux-8wN">
+                                <rect key="frame" x="102" y="348" width="397" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.86833175505050508" green="0.23930393956036342" blue="0.16522170781537884" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="ObK-Ux-8wN" secondAttribute="centerX" constant="-0.5" id="6x0-DM-kRz"/>
                             <constraint firstAttribute="centerX" secondItem="v66-l6-64X" secondAttribute="centerX" constant="-0.5" id="BMV-Qr-h0i"/>
                             <constraint firstAttribute="centerX" secondItem="uwQ-r6-zZT" secondAttribute="centerX" id="MFM-PX-aTm"/>
                             <constraint firstAttribute="centerY" secondItem="v66-l6-64X" secondAttribute="centerY" id="Ziz-pj-DNQ"/>
                             <constraint firstItem="v66-l6-64X" firstAttribute="top" secondItem="uwQ-r6-zZT" secondAttribute="bottom" constant="35" id="fwU-22-yH9"/>
+                            <constraint firstItem="ObK-Ux-8wN" firstAttribute="top" secondItem="v66-l6-64X" secondAttribute="bottom" constant="33" id="sw1-Or-b3l"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rME-UU-mWo"/>
                     <connections>
                         <outlet property="loadContactsButton" destination="v66-l6-64X" id="0UJ-0w-4Sy"/>
                         <outlet property="loadingIndicator" destination="uwQ-r6-zZT" id="m8Y-6C-ie1"/>
+                        <outlet property="permissionNoticeLabel" destination="ObK-Ux-8wN" id="9gT-zd-APa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -54,7 +54,7 @@ class OSTABManager {
     }
     
     func requestAuthorization(completion:(isGranted: Bool, permissionError: NSError?)->()) {
-        ab.requestAuthorizationWithCompletion { (granted, error) -> Void in
+        ab?.requestAuthorizationWithCompletion { (granted, error) -> Void in
             completion(isGranted: granted, permissionError: error);
         }
     }
