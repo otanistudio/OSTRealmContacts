@@ -60,7 +60,7 @@ class OSTStartViewController: UIViewController {
 
     private func showContacts() {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil);
-        let contactViewController = mainStoryboard.instantiateViewControllerWithIdentifier("sidContactsViewController") as UIViewController
+        let contactViewController = mainStoryboard.instantiateViewControllerWithIdentifier("sidContactsViewController") as! UIViewController
         self.parentViewController?.showViewController(contactViewController, sender: self)
     }
 

@@ -19,7 +19,7 @@ class OSTABManager {
     
     func copyRecords(success:()->(), failure:(message: String)->()) {
         if (self.hasPermission()) {
-            let people = self.ab.peopleOrderedByUsersPreference as [RHPerson]
+            let people = self.ab.peopleOrderedByUsersPreference as! [RHPerson]
             for rhPerson in people {
                 self.writeRecordWithPerson(rhPerson)
             }
@@ -48,8 +48,8 @@ class OSTABManager {
         }
         
         for rhNumber in rhPhoneNumbers! {
-            let n: NSString! = rhNumber as NSString
             println(OSTPhoneUtility.normalizedPhoneStringFromString(n))
+            let n: NSString! = rhNumber as! NSString
         }
     }
     

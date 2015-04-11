@@ -44,12 +44,12 @@ class OSTPhoneUtility: NSObject {
         let nonASCIICharacterSet = NSCharacterSet(charactersInString: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ").invertedSet
         var tmpSeparated = phoneString!.componentsSeparatedByCharactersInSet(nonASCIICharacterSet) as NSArray
         let immutablePhoneString = tmpSeparated.componentsJoinedByString("") as NSString
-        var stringToFix = immutablePhoneString.mutableCopy() as NSMutableString
+        var stringToFix = immutablePhoneString.mutableCopy() as! NSMutableString
         let range = NSMakeRange(0, stringToFix.length)
         for (letter, tone) in phoneLetters() {
             stringToFix.replaceOccurrencesOfString(letter, withString: tone, options:.CaseInsensitiveSearch, range: range)
         }
-        return stringToFix.copy() as NSString
+        return stringToFix.copy() as! NSString
     }
     
 }
