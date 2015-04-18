@@ -9,10 +9,32 @@
 import UIKit
 import Realm
 
-class OSTABManager {
-    let ab = RHAddressBook()
-    let realm = RLMRealm.inMemoryRealmWithIdentifier("OSTABManagerRealm")
+class OSTABManager : NSObject, NilLiteralConvertible {
+    var ab = RHAddressBook()
+    
+    required init(nilLiteral: ()) {
+        super.init()
+    }
+    
+    override init() {
+        super.init()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "addressBookDidChange:", name: RHAddressBookExternalChangeNotification, object: nil)
+    }
 
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    class func realm() -> RLMRealm {
+        // Switch return statements for in-memory vs. persisted Realms
+        return RLMRealm.inMemoryRealmWithIdentifier("OSTABManagerRealm");
+        //return RLMRealm.defaultRealm()
+    }
+    
+    func addressBookDidChange(notification: NSNotification) {
+        println("address book changed via notification: \(notification)")
+    }
+    
     func hasPermission() -> Bool {
         return RHAddressBook.authorizationStatus() == RHAuthorizationStatus.Authorized
     }
@@ -29,16 +51,30 @@ class OSTABManager {
         }
     }
     
+    private func shouldSkip(rhPerson: RHPerson) -> Bool {
+        return rhPerson.compositeName == nil
+    }
+    
     private func writeRecordWithPerson(rhPerson: RHPerson) {
+        if (shouldSkip(rhPerson)) {
+            return;
+        }
+        
         weak var weakSelf = self;
         
-        var ostPerson = OSTPerson()
-        ostPerson.fullName = rhPerson.compositeName != nil ? rhPerson.compositeName : "n/a"
-        ostPerson.firstName = rhPerson.firstName != nil ? rhPerson.firstName : ""
-        ostPerson.lastName = rhPerson.lastName != nil ? rhPerson.lastName : ""
+        var ostPerson = OSTPerson(
+            fullName: rhPerson.compositeName,
+            firstName: rhPerson.firstName != nil ? rhPerson.firstName : "",
+            lastName: rhPerson.lastName != nil ? rhPerson.lastName : "",
+            phoneNumber: "")
         
-        realm.transactionWithBlock { () -> Void in
-            self.realm.addObject(ostPerson)
+        OSTABManager.realm().transactionWithBlock { () -> Void in
+            var matches = OSTPerson.objectsWhere("fullName = '\(ostPerson.fullName)'")
+            if (matches.count > 0) {
+                println("\(ostPerson.fullName) already exists")
+            } else {
+                OSTABManager.realm().addObject(ostPerson)
+            }
         }
         
         let rhPhoneNumbers = rhPerson.phoneNumbers.values as Array?
@@ -48,8 +84,8 @@ class OSTABManager {
         }
         
         for rhNumber in rhPhoneNumbers! {
-            println(OSTPhoneUtility.normalizedPhoneStringFromString(n))
             let n: NSString! = rhNumber as! NSString
+//            println(OSTPhoneUtility.normalizedPhoneStringFromString(n))
         }
     }
     
