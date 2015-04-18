@@ -18,7 +18,12 @@ class OSTABManager : NSObject, NilLiteralConvertible {
     
     override init() {
         super.init()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "addressBookDidChange:", name: RHAddressBookExternalChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "addressBookDidChange:",
+            name: RHAddressBookExternalChangeNotification,
+            object: nil
+        )
     }
 
     deinit {
@@ -66,7 +71,8 @@ class OSTABManager : NSObject, NilLiteralConvertible {
             fullName: rhPerson.compositeName,
             firstName: rhPerson.firstName != nil ? rhPerson.firstName : "",
             lastName: rhPerson.lastName != nil ? rhPerson.lastName : "",
-            phoneNumber: "")
+            phoneNumber: ""
+        )
         
         OSTABManager.realm().transactionWithBlock { () -> Void in
             var matches = OSTPerson.objectsWhere("fullName = '\(ostPerson.fullName)'")
