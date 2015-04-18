@@ -11,6 +11,7 @@ import UIKit
 class OSTContactCell: UITableViewCell {
 
     @IBOutlet weak var fullNameLabel: UILabel!
+    static let cellID = "OSTContactCellIdentifer"
     
     override func awakeFromNib() {
         super.awakeFromNib()

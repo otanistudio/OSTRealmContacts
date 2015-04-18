@@ -41,7 +41,7 @@ class OSTContactsViewController: UITableViewController {
     // MARK: - Table View Delegate
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell : OSTContactCell = tableView.dequeueReusableCellWithIdentifier("OSTContactCellIdentifer", forIndexPath: indexPath) as! OSTContactCell
+        let cell : OSTContactCell = tableView.dequeueReusableCellWithIdentifier(OSTContactCell.cellID, forIndexPath: indexPath) as! OSTContactCell
         let ostPerson = people[UInt(indexPath.row)] as! OSTPerson
         cell.fullNameLabel.text = ostPerson.fullName as String
 
