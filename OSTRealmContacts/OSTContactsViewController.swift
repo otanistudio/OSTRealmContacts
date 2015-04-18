@@ -38,6 +38,8 @@ class OSTContactsViewController: UITableViewController {
         return Int(people.count)
     }
     
+    // MARK: - Table View Delegate
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell : OSTContactCell = tableView.dequeueReusableCellWithIdentifier("OSTContactCellIdentifer", forIndexPath: indexPath) as! OSTContactCell
         let ostPerson = people[UInt(indexPath.row)] as! OSTPerson
