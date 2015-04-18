@@ -11,12 +11,11 @@ import Realm
 
 class OSTContactsViewController: UITableViewController {
 
-    let realm = RLMRealm.inMemoryRealmWithIdentifier("OSTABManagerRealm")
+    let realm = OSTABManager.realm()
     let people: RLMResults
     
-    
     required init(coder aDecoder: NSCoder) {
-        self.people = OSTPerson.allObjectsInRealm(realm)
+        self.people = OSTPerson.allObjectsInRealm(OSTABManager.realm())
         super.init(coder: aDecoder)
     }
     
