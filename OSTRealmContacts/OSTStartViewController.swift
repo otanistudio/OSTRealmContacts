@@ -14,11 +14,19 @@ class OSTStartViewController: UIViewController {
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var permissionNoticeLabel: UILabel!
     
-    let manager = OSTABManager()
+    var manager = OSTABManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.checkPermission()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    private func checkPermission() {
         if (self.manager.hasPermission()) {
             self.loadContactsButton.enabled = true
         } else {
@@ -34,11 +42,6 @@ class OSTStartViewController: UIViewController {
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     @IBAction func didTapLoadContactsButton(sender: AnyObject) {
         self.loadingIndicator.startAnimating()
         self.beginFetch()
@@ -47,18 +50,21 @@ class OSTStartViewController: UIViewController {
     private func beginFetch() {
         manager.copyRecords({ [weak self]() -> () in    
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self!.loadingIndicator.stopAnimating()
-                    self!.showContacts()
+                    self?.loadingIndicator.stopAnimating()
+                    self?.showContacts()
                 })
             }, failure: { [weak self](message: String) -> () in
                 let failAlert = UIAlertController.init(title: "Permission Required", message: message, preferredStyle: .Alert)
                 let alertAction = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.Default) { action -> Void in
+                    self?.manager = nil
+                    self?.manager = OSTABManager()
+                    self?.checkPermission()
                 }
                 failAlert.addAction(alertAction)
                 
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self!.loadingIndicator.stopAnimating()
-                    self!.presentViewController(failAlert, animated: false) { completion -> Void in }
+                    self?.loadingIndicator.stopAnimating()
+                    self?.presentViewController(failAlert, animated: false) { completion -> Void in }
                 })
         })
     }
