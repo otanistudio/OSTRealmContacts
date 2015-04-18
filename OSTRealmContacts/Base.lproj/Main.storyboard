@@ -76,22 +76,35 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e6h-m5-ZP6" id="Yk2-Vq-xh4">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(650) 555-8888" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOy-TU-kKB">
+                                            <rect key="frame" x="458" y="11" width="134" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="ewg-Ug-udQ"/>
+                                                <constraint firstAttribute="width" constant="134" id="tfC-7i-cER"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2w-1r-RV2">
-                                            <rect key="frame" x="8" y="12" width="584" height="20"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="8" y="12" width="442" height="20"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="B2w-1r-RV2" firstAttribute="leading" secondItem="Yk2-Vq-xh4" secondAttribute="leadingMargin" id="2t9-3c-SnW"/>
-                                        <constraint firstItem="B2w-1r-RV2" firstAttribute="trailing" secondItem="Yk2-Vq-xh4" secondAttribute="trailingMargin" id="GPI-2D-V93"/>
+                                        <constraint firstAttribute="centerY" secondItem="XOy-TU-kKB" secondAttribute="centerY" id="VGL-SI-jKX"/>
+                                        <constraint firstItem="XOy-TU-kKB" firstAttribute="trailing" secondItem="Yk2-Vq-xh4" secondAttribute="trailingMargin" id="ZUd-Gb-AQe"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="B2w-1r-RV2" secondAttribute="bottom" constant="3" id="mRH-je-0Vm"/>
+                                        <constraint firstItem="XOy-TU-kKB" firstAttribute="leading" secondItem="B2w-1r-RV2" secondAttribute="trailing" constant="8" id="pik-x9-QBQ"/>
                                         <constraint firstItem="B2w-1r-RV2" firstAttribute="top" secondItem="Yk2-Vq-xh4" secondAttribute="topMargin" constant="4" id="s4A-o4-jq4"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="fullNameLabel" destination="B2w-1r-RV2" id="uVI-XR-pQ5"/>
+                                    <outlet property="phoneNumberLabel" destination="XOy-TU-kKB" id="a69-ET-agE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

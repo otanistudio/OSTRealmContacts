@@ -11,10 +11,12 @@ import Realm
 
 class OSTPhoneNumber: RLMObject {
     dynamic var normalizedNumber: String = ""
+    dynamic var formattedNumber: String = ""
     
-    init!(normalizedNumber: String) {
+    init!(normalizedNumber: String, formattedNumber: String) {
         super.init()
         self.normalizedNumber = normalizedNumber
+        self.formattedNumber = formattedNumber
     }
     
     override init() {

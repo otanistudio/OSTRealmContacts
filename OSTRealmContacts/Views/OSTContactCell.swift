@@ -11,6 +11,8 @@ import UIKit
 class OSTContactCell: UITableViewCell {
 
     @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
+    
     static let cellID = "OSTContactCellIdentifer"
     
     override func awakeFromNib() {
@@ -26,6 +28,7 @@ class OSTContactCell: UITableViewCell {
     
     override func prepareForReuse() {
         fullNameLabel.text = ""
+        phoneNumberLabel.text = ""
     }
 
 }

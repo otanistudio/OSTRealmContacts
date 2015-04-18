@@ -44,7 +44,9 @@ class OSTContactsViewController: UITableViewController {
         let cell : OSTContactCell = tableView.dequeueReusableCellWithIdentifier(OSTContactCell.cellID, forIndexPath: indexPath) as! OSTContactCell
         let ostPerson = people[UInt(indexPath.row)] as! OSTPerson
         cell.fullNameLabel.text = ostPerson.fullName as String
-
+        
+        let ostPhone = ostPerson.phoneNumbers.firstObject() as! OSTPhoneNumber
+        cell.phoneNumberLabel.text = ostPhone.formattedNumber
         return cell
     }
 }

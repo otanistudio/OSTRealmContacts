@@ -73,19 +73,19 @@ class OSTABManager : NSObject, NilLiteralConvertible {
             return;
         }
         
-        var phoneNumbers = RLMArray(objectClassName: OSTPhoneNumber.className())
+        var rlmPhoneNumbers = RLMArray(objectClassName: OSTPhoneNumber.className())
         for rhNumber in rhPhoneNumbers! {
-            let n: NSString! = rhNumber as! NSString
-            let phoneNumberString = OSTPhoneUtility.normalizedPhoneStringFromString(n) as String
-            let phoneNumber = OSTPhoneNumber(normalizedNumber: phoneNumberString)
-            phoneNumbers.addObject(phoneNumber)
+            let formattedNumString = rhNumber as! String
+            let normalizedNumString = OSTPhoneUtility.normalizedPhoneStringFromString(formattedNumString) as String
+            let phoneNumber = OSTPhoneNumber(normalizedNumber: normalizedNumString, formattedNumber: formattedNumString)
+            rlmPhoneNumbers.addObject(phoneNumber)
         }
         
         var ostPerson = OSTPerson(
             fullName: rhPerson.compositeName,
             firstName: rhPerson.firstName != nil ? rhPerson.firstName : "",
             lastName: rhPerson.lastName != nil ? rhPerson.lastName : "",
-            phoneNumbers: phoneNumbers
+            phoneNumbers: rlmPhoneNumbers
         )
         
         OSTABManager.realm().transactionWithBlock { () -> Void in
