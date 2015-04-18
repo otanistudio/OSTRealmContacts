@@ -13,18 +13,18 @@ class OSTPerson : RLMObject {
     dynamic var fullName = ""
     dynamic var firstName = ""
     dynamic var lastName = ""
-    dynamic var phoneNumber = ""
+    dynamic var phoneNumbers = RLMArray(objectClassName: OSTPhoneNumber.className())
     
     override class func primaryKey() -> String {
         return "fullName"
     }
     
-    init!(fullName: String, firstName: String, lastName: String, phoneNumber: String) {
+    init!(fullName: String, firstName: String, lastName: String, phoneNumbers: RLMArray) {
         super.init()
         self.fullName = fullName
         self.firstName = firstName
         self.lastName = lastName
-        self.phoneNumber = phoneNumber
+        self.phoneNumbers = phoneNumbers
     }
     
     override init() {

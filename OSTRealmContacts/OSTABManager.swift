@@ -67,11 +67,25 @@ class OSTABManager : NSObject, NilLiteralConvertible {
         
         weak var weakSelf = self;
         
+        let rhPhoneNumbers = rhPerson.phoneNumbers.values as Array?
+        
+        if rhPhoneNumbers == nil {
+            return;
+        }
+        
+        var phoneNumbers = RLMArray(objectClassName: OSTPhoneNumber.className())
+        for rhNumber in rhPhoneNumbers! {
+            let n: NSString! = rhNumber as! NSString
+            let phoneNumberString = OSTPhoneUtility.normalizedPhoneStringFromString(n) as String
+            let phoneNumber = OSTPhoneNumber(normalizedNumber: phoneNumberString)
+            phoneNumbers.addObject(phoneNumber)
+        }
+        
         var ostPerson = OSTPerson(
             fullName: rhPerson.compositeName,
             firstName: rhPerson.firstName != nil ? rhPerson.firstName : "",
             lastName: rhPerson.lastName != nil ? rhPerson.lastName : "",
-            phoneNumber: ""
+            phoneNumbers: phoneNumbers
         )
         
         OSTABManager.realm().transactionWithBlock { () -> Void in
@@ -81,17 +95,6 @@ class OSTABManager : NSObject, NilLiteralConvertible {
             } else {
                 OSTABManager.realm().addObject(ostPerson)
             }
-        }
-        
-        let rhPhoneNumbers = rhPerson.phoneNumbers.values as Array?
-        
-        if rhPhoneNumbers == nil {
-            return;
-        }
-        
-        for rhNumber in rhPhoneNumbers! {
-            let n: NSString! = rhNumber as! NSString
-//            println(OSTPhoneUtility.normalizedPhoneStringFromString(n))
         }
     }
     
