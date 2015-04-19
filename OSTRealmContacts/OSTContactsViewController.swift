@@ -106,11 +106,15 @@ class OSTContactsViewController: UITableViewController, UISearchBarDelegate, UIS
     
     // MARK: - UISearchResultsUpdating Protocol
     
-    /* This is the important chunk inside of setting up all the search bar delegate UI */
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         let searchText = searchController.searchBar.text as String
-        let searchPredicate = NSPredicate(format: "fullName CONTAINS[c] %@", argumentArray: [searchText])
+        
+        let phonePredicate = NSPredicate(format: "normalizedNumber CONTAINS %@", argumentArray: [searchText])
+        let phoneResults = OSTPhoneNumber.objectsInRealm(realm, withPredicate: phonePredicate)
+        
+        let searchPredicate = NSPredicate(format: "fullName CONTAINS[c] %@ OR ANY phoneNumbers IN %@", argumentArray: [searchText, phoneResults])
         let searchResults = OSTPerson.objectsInRealm(realm, withPredicate: searchPredicate)
+        
         resultsTableController.foundPeople = searchResults
         resultsTableController.tableView.reloadData()
     }
