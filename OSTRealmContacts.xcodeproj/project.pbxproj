@@ -19,6 +19,8 @@
 		5CBC39391AB63C52009EF24F /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC39381AB63C52009EF24F /* RLMSupport.swift */; };
 		5CBC393C1AB63DD6009EF24F /* OSTPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC393B1AB63DD6009EF24F /* OSTPerson.swift */; };
 		5CC75F0B1AE2D0F200359B63 /* OSTPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC75F0A1AE2D0F200359B63 /* OSTPhoneNumber.swift */; };
+		5CC899641AE46BC700AB0119 /* OSTPhoneUtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC899631AE46BC700AB0119 /* OSTPhoneUtilityTests.swift */; };
+		5CC899651AE46C4800AB0119 /* OSTPhoneUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE4686A1AB67F34000CAAC5 /* OSTPhoneUtility.swift */; };
 		5CE4686B1AB67F34000CAAC5 /* OSTPhoneUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE4686A1AB67F34000CAAC5 /* OSTPhoneUtility.swift */; };
 		5CE468751AB6A4A8000CAAC5 /* OSTContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE468741AB6A4A8000CAAC5 /* OSTContactCell.swift */; };
 		5CFCF7891AAD203800B63FF2 /* OSTContactsAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCF7881AAD203800B63FF2 /* OSTContactsAppDelegate.swift */; };
@@ -67,6 +69,7 @@
 		5CBC39381AB63C52009EF24F /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RLMSupport.swift; path = Externals/Realm/RLMSupport.swift; sourceTree = "<group>"; };
 		5CBC393B1AB63DD6009EF24F /* OSTPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTPerson.swift; path = Models/OSTPerson.swift; sourceTree = "<group>"; };
 		5CC75F0A1AE2D0F200359B63 /* OSTPhoneNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTPhoneNumber.swift; path = Models/OSTPhoneNumber.swift; sourceTree = "<group>"; };
+		5CC899631AE46BC700AB0119 /* OSTPhoneUtilityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTPhoneUtilityTests.swift; sourceTree = "<group>"; };
 		5CE4686A1AB67F34000CAAC5 /* OSTPhoneUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTPhoneUtility.swift; path = Utilities/OSTPhoneUtility.swift; sourceTree = "<group>"; };
 		5CE468741AB6A4A8000CAAC5 /* OSTContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTContactCell.swift; path = Views/OSTContactCell.swift; sourceTree = "<group>"; };
 		5CFCF7831AAD203800B63FF2 /* OSTRealmContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSTRealmContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,6 +228,7 @@
 		5CFCF79B1AAD203800B63FF2 /* OSTRealmContactsTests */ = {
 			isa = PBXGroup;
 			children = (
+				5CC899631AE46BC700AB0119 /* OSTPhoneUtilityTests.swift */,
 				5CFCF79E1AAD203800B63FF2 /* OSTRealmContactsTests.swift */,
 				5CFCF79C1AAD203800B63FF2 /* Supporting Files */,
 			);
@@ -376,6 +380,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CC899641AE46BC700AB0119 /* OSTPhoneUtilityTests.swift in Sources */,
+				5CC899651AE46C4800AB0119 /* OSTPhoneUtility.swift in Sources */,
 				5CFCF79F1AAD203800B63FF2 /* OSTRealmContactsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
