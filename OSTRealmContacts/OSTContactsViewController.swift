@@ -24,9 +24,15 @@ class OSTContactsViewController: UITableViewController {
         super.viewDidLoad()
         self.title = "Contacts via Realm"
         
-        self.realmNotification = realm.addNotificationBlock({ [weak self](notificationString, realm) -> Void in
-            self?.tableView.reloadData()
-        })
+        if realmNotification == nil {
+            realmNotification = realm.addNotificationBlock({ [weak self](notificationString, realm) -> Void in
+                self?.tableView.reloadData()
+            })
+        }
+    }
+    
+    deinit {
+        realm.removeNotification(realmNotification)
     }
     
     // MARK: - Table view data source
