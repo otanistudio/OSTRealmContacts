@@ -47,7 +47,7 @@ class OSTABManager : NSObject, NilLiteralConvertible {
     }
     
     func copyRecords( success:(()->())?, failure:((message: String)->())? ) {
-        if (hasPermission()) {
+        if hasPermission() {
             let people = self.ab.peopleOrderedByUsersPreference as! [RHPerson]
             for rhPerson in people {
                 self.writeRecordWithPerson(rhPerson)
@@ -64,7 +64,7 @@ class OSTABManager : NSObject, NilLiteralConvertible {
     }
     
     private func writeRecordWithPerson(rhPerson: RHPerson) {
-        if (shouldSkip(rhPerson)) {
+        if shouldSkip(rhPerson) {
             return;
         }
         

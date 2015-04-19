@@ -27,12 +27,12 @@ class OSTStartViewController: UIViewController {
     }
     
     private func checkPermission() {
-        if (manager.hasPermission()) {
+        if manager.hasPermission() {
             loadContactsButton.enabled = true
         } else {
             manager.requestAuthorization { [weak self](isGranted, permissionError) -> () in
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    if (isGranted) {
+                    if isGranted {
                         self?.loadContactsButton.enabled = true
                     } else {
                         self?.permissionNoticeLabel.hidden = false
