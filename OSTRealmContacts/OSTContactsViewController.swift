@@ -11,23 +11,24 @@ import Realm
 
 class OSTContactsViewController: UITableViewController {
 
-    let realm = OSTABManager.realm()
-    let people: RLMResults
+    let realm = OSTABManager.ostRealm()
+    var realmNotification: RLMNotificationToken?
+    var people: RLMResults
     
     required init(coder aDecoder: NSCoder) {
-        self.people = OSTPerson.allObjectsInRealm(OSTABManager.realm())
+        self.people = OSTPerson.allObjectsInRealm(realm).sortedResultsUsingProperty("fullName", ascending: true)
         super.init(coder: aDecoder)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Contacts via Realm"
+        
+        self.realmNotification = realm.addNotificationBlock({ [weak self](notificationString, realm) -> Void in
+            self?.tableView.reloadData()
+        })
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

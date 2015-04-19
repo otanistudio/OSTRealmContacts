@@ -11,6 +11,7 @@ import Realm
 
 class OSTABManager : NSObject, NilLiteralConvertible {
     var ab = RHAddressBook()
+    let realm = OSTABManager.ostRealm()
     
     required init(nilLiteral: ()) {
         super.init()
@@ -30,7 +31,7 @@ class OSTABManager : NSObject, NilLiteralConvertible {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    class func realm() -> RLMRealm {
+    class func ostRealm() -> RLMRealm {
         // Switch return statements for in-memory vs. persisted Realms
         return RLMRealm.inMemoryRealmWithIdentifier("OSTABManagerRealm");
         //return RLMRealm.defaultRealm()
@@ -38,26 +39,28 @@ class OSTABManager : NSObject, NilLiteralConvertible {
     
     func addressBookDidChange(notification: NSNotification) {
         println("address book changed via notification: \(notification)")
+        copyRecords(nil, failure: nil)
     }
     
     func hasPermission() -> Bool {
         return RHAddressBook.authorizationStatus() == RHAuthorizationStatus.Authorized
     }
     
-    func copyRecords(success:()->(), failure:(message: String)->()) {
-        if (self.hasPermission()) {
+    func copyRecords( success:(()->())?, failure:((message: String)->())? ) {
+        if (hasPermission()) {
             let people = self.ab.peopleOrderedByUsersPreference as! [RHPerson]
             for rhPerson in people {
                 self.writeRecordWithPerson(rhPerson)
             }
-            success()
+            success?()
         } else {
-            failure(message: "no permission")
+            failure?(message: "no permission")
         }
     }
     
     private func shouldSkip(rhPerson: RHPerson) -> Bool {
-        return rhPerson.compositeName == nil
+        let rhPhoneNumbers = rhPerson.phoneNumbers.values as Array?
+        return (rhPerson.compositeName == nil || rhPhoneNumbers == nil)
     }
     
     private func writeRecordWithPerson(rhPerson: RHPerson) {
@@ -65,14 +68,7 @@ class OSTABManager : NSObject, NilLiteralConvertible {
             return;
         }
         
-        weak var weakSelf = self;
-        
         let rhPhoneNumbers = rhPerson.phoneNumbers.values as Array?
-        
-        if rhPhoneNumbers == nil {
-            return;
-        }
-        
         var rlmPhoneNumbers = RLMArray(objectClassName: OSTPhoneNumber.className())
         for rhNumber in rhPhoneNumbers! {
             let formattedNumString = rhNumber as! String
@@ -88,13 +84,8 @@ class OSTABManager : NSObject, NilLiteralConvertible {
             phoneNumbers: rlmPhoneNumbers
         )
         
-        OSTABManager.realm().transactionWithBlock { () -> Void in
-            var matches = OSTPerson.objectsWhere("fullName = '\(ostPerson.fullName)'")
-            if (matches.count > 0) {
-                println("\(ostPerson.fullName) already exists")
-            } else {
-                OSTABManager.realm().addObject(ostPerson)
-            }
+        realm.transactionWithBlock { () -> Void in
+            OSTPerson.createOrUpdateInRealm(realm, withObject: ostPerson)
         }
     }
     
