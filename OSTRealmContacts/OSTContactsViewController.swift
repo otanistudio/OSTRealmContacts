@@ -22,7 +22,7 @@ class OSTContactsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Contacts via Realm"
+        title = "Contacts via Realm"
         
         if realmNotification == nil {
             realmNotification = realm.addNotificationBlock({ [weak self](notificationString, realm) -> Void in
