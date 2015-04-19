@@ -18,7 +18,7 @@ class OSTStartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.checkPermission()
+        checkPermission()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,15 +27,15 @@ class OSTStartViewController: UIViewController {
     }
     
     private func checkPermission() {
-        if (self.manager.hasPermission()) {
-            self.loadContactsButton.enabled = true
+        if (manager.hasPermission()) {
+            loadContactsButton.enabled = true
         } else {
-            self.manager.requestAuthorization { (isGranted, permissionError) -> () in
+            manager.requestAuthorization { [weak self](isGranted, permissionError) -> () in
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     if (isGranted) {
-                        self.loadContactsButton.enabled = true
+                        self?.loadContactsButton.enabled = true
                     } else {
-                        self.permissionNoticeLabel.hidden = false
+                        self?.permissionNoticeLabel.hidden = false
                     }
                 })
             }
@@ -43,8 +43,8 @@ class OSTStartViewController: UIViewController {
     }
 
     @IBAction func didTapLoadContactsButton(sender: AnyObject) {
-        self.loadingIndicator.startAnimating()
-        self.beginFetch()
+        loadingIndicator.startAnimating()
+        beginFetch()
     }
     
     private func beginFetch() {
@@ -72,7 +72,7 @@ class OSTStartViewController: UIViewController {
     private func showContacts() {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil);
         let contactViewController = mainStoryboard.instantiateViewControllerWithIdentifier("sidContactsViewController") as! UIViewController
-        self.parentViewController?.showViewController(contactViewController, sender: self)
+        parentViewController?.showViewController(contactViewController, sender: self)
     }
 
 }
