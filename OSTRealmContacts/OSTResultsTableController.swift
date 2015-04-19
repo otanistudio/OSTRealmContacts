@@ -14,6 +14,7 @@ class OSTResultsTableController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.registerNib(UINib(nibName: "OSTResultCell", bundle: nil), forCellReuseIdentifier: OSTResultCell.cellID)
     }
 
     // MARK: - Table view data source
@@ -23,8 +24,6 @@ class OSTResultsTableController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        let foundPeopleCount = Int(foundPeople!.count)
-//        println("number of found people: \(foundPeopleCount)")
         if foundPeople == nil {
             return 0
         }
@@ -32,12 +31,13 @@ class OSTResultsTableController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: OSTContactCell = tableView.dequeueReusableCellWithIdentifier(OSTContactCell.cellID, forIndexPath: indexPath) as! OSTContactCell
+        let cell: OSTResultCell = tableView.dequeueReusableCellWithIdentifier(OSTResultCell.cellID, forIndexPath: indexPath) as! OSTResultCell
+        
         let ostPerson = foundPeople?[UInt(indexPath.row)] as! OSTPerson
         cell.fullNameLabel.text = ostPerson.fullName as String
         
         let ostPhone = ostPerson.phoneNumbers.firstObject() as! OSTPhoneNumber
-        cell.phoneNumberLabel.text = ostPhone.formattedNumber
+        cell.phoneLabel.text = ostPhone.formattedNumber
         
         return cell
     }

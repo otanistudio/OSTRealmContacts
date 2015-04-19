@@ -119,58 +119,6 @@
             </objects>
             <point key="canvasLocation" x="968" y="1130"/>
         </scene>
-        <!--Results Table Controller-->
-        <scene sceneID="lQF-HO-fsW">
-            <objects>
-                <tableViewController storyboardIdentifier="sidResultsViewController" id="JWd-Dl-xlD" customClass="OSTResultsTableController" customModule="OSTRealmContacts" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="jsc-oi-yhQ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Cm1-Ap-jd7">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cm1-Ap-jd7" id="dKn-bM-IdZ">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(000)000-0000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4W-yP-cx6">
-                                            <rect key="frame" x="458" y="11" width="134" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="MGi-NP-JG4"/>
-                                                <constraint firstAttribute="width" constant="134" id="kFU-7T-N49"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Found Contact" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzU-FO-00G">
-                                            <rect key="frame" x="8" y="12" width="442" height="20"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="RzU-FO-00G" firstAttribute="leading" secondItem="dKn-bM-IdZ" secondAttribute="leadingMargin" id="4nl-hk-pPU"/>
-                                        <constraint firstAttribute="centerY" secondItem="A4W-yP-cx6" secondAttribute="centerY" id="H8m-32-dKl"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="RzU-FO-00G" secondAttribute="bottom" constant="3" id="YGI-Rq-6xD"/>
-                                        <constraint firstItem="A4W-yP-cx6" firstAttribute="trailing" secondItem="dKn-bM-IdZ" secondAttribute="trailingMargin" id="ZXk-rf-o9n"/>
-                                        <constraint firstItem="RzU-FO-00G" firstAttribute="top" secondItem="dKn-bM-IdZ" secondAttribute="topMargin" constant="4" id="hEy-L2-zXx"/>
-                                        <constraint firstItem="A4W-yP-cx6" firstAttribute="leading" secondItem="RzU-FO-00G" secondAttribute="trailing" constant="8" id="rgO-5h-hwX"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="JWd-Dl-xlD" id="75X-dh-yAB"/>
-                            <outlet property="delegate" destination="JWd-Dl-xlD" id="s7s-9V-gzj"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i7U-jP-A8Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1721" y="1131"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="lUQ-Mf-7Ud">
             <objects>

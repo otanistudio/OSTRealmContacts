@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5C35CA831AE37BD300E73DE3 /* OSTResultsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C35CA821AE37BD300E73DE3 /* OSTResultsTableController.swift */; };
+		5C5EE1041AE438EF006D087B /* OSTResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5EE1021AE438EF006D087B /* OSTResultCell.swift */; };
+		5C5EE1051AE438EF006D087B /* OSTResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5EE1031AE438EF006D087B /* OSTResultCell.xib */; };
 		5C918C5C1AAD5129006A18FA /* OSTABManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C918C5B1AAD5129006A18FA /* OSTABManager.swift */; };
 		5C918C5E1AADE59F006A18FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C918C5D1AADE59F006A18FA /* Foundation.framework */; };
 		5CBC38A31AB517CA009EF24F /* libRHAddressBookUniversal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBC38A21AB517CA009EF24F /* libRHAddressBookUniversal.a */; };
@@ -40,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		5C35CA821AE37BD300E73DE3 /* OSTResultsTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTResultsTableController.swift; sourceTree = "<group>"; };
+		5C5EE1021AE438EF006D087B /* OSTResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTResultCell.swift; path = Views/OSTResultCell.swift; sourceTree = "<group>"; };
+		5C5EE1031AE438EF006D087B /* OSTResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OSTResultCell.xib; path = Views/OSTResultCell.xib; sourceTree = "<group>"; };
 		5C918C5B1AAD5129006A18FA /* OSTABManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTABManager.swift; sourceTree = "<group>"; };
 		5C918C5D1AADE59F006A18FA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5CBC38931AB517CA009EF24F /* AddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBook.h; sourceTree = "<group>"; };
@@ -162,6 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				5CE468741AB6A4A8000CAAC5 /* OSTContactCell.swift */,
+				5C5EE1021AE438EF006D087B /* OSTResultCell.swift */,
+				5C5EE1031AE438EF006D087B /* OSTResultCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -334,6 +340,7 @@
 				5CFCF78E1AAD203800B63FF2 /* Main.storyboard in Resources */,
 				5CFCF7931AAD203800B63FF2 /* LaunchScreen.xib in Resources */,
 				5CFCF7901AAD203800B63FF2 /* Images.xcassets in Resources */,
+				5C5EE1051AE438EF006D087B /* OSTResultCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CFCF78B1AAD203800B63FF2 /* OSTStartViewController.swift in Sources */,
+				5C5EE1041AE438EF006D087B /* OSTResultCell.swift in Sources */,
 				5C918C5C1AAD5129006A18FA /* OSTABManager.swift in Sources */,
 				5CBC39391AB63C52009EF24F /* RLMSupport.swift in Sources */,
 				5CE468751AB6A4A8000CAAC5 /* OSTContactCell.swift in Sources */,
