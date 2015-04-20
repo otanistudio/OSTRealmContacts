@@ -19,6 +19,10 @@ class OSTPhoneNumber: RLMObject {
         self.formattedNumber = formattedNumber
     }
     
+    override class func primaryKey() -> String {
+        return "normalizedNumber"
+    }
+    
     override init() {
         super.init()
     }
