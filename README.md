@@ -6,7 +6,18 @@ __Realm + AddressBook.framework__
 
 This is an iOS Sample project that explores the importation of AddressBook contacts into a [Realm](http://realm.io) database using [Swift](https://developer.apple.com/swift/), bridged with an Objective-C based wrapper of [ABAddressBook](https://developer.apple.com/library/ios/documentation/AddressBook/Reference/ABAddressBookRef_iPhoneOS/index.html) called [RHAddressBook](https://github.com/heardrwt/RHAddressBook).
 
-The project uses an in-memory instance of Realm, but you can make a one-line change in `OSTABManager` to switch to a persisted, default Realm (so that you can, for example, check out the data in the [Realm Browser](http://realm.io/docs/cocoa/#realm-browser).)
+By default, the project uses an in-memory instance of Realm, but you can make a one-line change in `OSTABManager` to switch to a persisted, default Realm (so that you can, for example, check out the data in the [Realm Browser](http://realm.io/docs/cocoa/#realm-browser).)
+
+### Features
+
+* Imports data from Contacts.app into a Realm database
+* Uses `UISearchController` and friends to display the results of predicate queries against the Realm instance
+
+## Why?
+
+I did something similar in Objective-C, CoreData and `NSFetchedResultsController`. 
+
+I wanted to learn more about Swift, gain a little bit of insight about bridging with ObjC, and play with Realm as a viable alternative to CoreData.
 
 ## Known Issues / TODOs
 
