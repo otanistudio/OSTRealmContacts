@@ -46,13 +46,21 @@ class OSTABManager : NSObject, NilLiteralConvertible {
         return RHAddressBook.authorizationStatus() == RHAuthorizationStatus.Authorized
     }
     
-    func copyRecords( success:(()->())?, failure:((message: String)->())? ) {
+    func copyRecords(success:(()->())?, failure:((message: String)->())?) {
         if hasPermission() {
-            let people = self.ab.peopleOrderedByUsersPreference as! [RHPerson]
-            for rhPerson in people {
-                self.writeRecordWithPerson(rhPerson)
-            }
-            success?()
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
+                let backgroundRealm = OSTABManager.ostRealm()
+                backgroundRealm.beginWriteTransaction()
+                let people = self.ab.peopleOrderedByUsersPreference as! [RHPerson]
+                for rhPerson in people {
+                    self.writeRecord(realm: backgroundRealm, rhPerson: rhPerson)
+                }
+                backgroundRealm.commitWriteTransaction()
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    success?()
+                })
+            })
         } else {
             failure?(message: "no permission")
         }
@@ -63,7 +71,7 @@ class OSTABManager : NSObject, NilLiteralConvertible {
         return (rhPerson.compositeName == nil || rhPhoneNumbers == nil)
     }
     
-    private func writeRecordWithPerson(rhPerson: RHPerson) {
+    private func writeRecord(#realm: RLMRealm, rhPerson: RHPerson) {
         if shouldSkip(rhPerson) {
             return;
         }
@@ -84,9 +92,8 @@ class OSTABManager : NSObject, NilLiteralConvertible {
             phoneNumbers: rlmPhoneNumbers
         )
         
-        realm.transactionWithBlock { () -> Void in
-            OSTPerson.createOrUpdateInRealm(realm, withObject: ostPerson)
-        }
+        // TODO: Enforce that this happens in the expected thread and transaction
+        OSTPerson.createOrUpdateInRealm(realm, withObject: ostPerson)
     }
     
     func requestAuthorization(completion:(isGranted: Bool, permissionError: NSError?)->()) {
