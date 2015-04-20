@@ -107,7 +107,7 @@ class OSTContactsViewController: UITableViewController, UISearchBarDelegate, UIS
     // MARK: - UISearchResultsUpdating Protocol
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
-        let searchText = searchController.searchBar.text as String
+        let searchText = searchController.searchBar.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) as String
         
         if count(searchText) < 3 {
             return
