@@ -25,7 +25,7 @@ I wanted to learn more about Swift, gain a little bit of insight about bridging 
 
 ## Known Issues / TODOs
 
-* The predicates for searching through large datasets need to be faster
+* The predicates for searching through large datasets need more thought, but at 1200 records, perf is close to the Contacts app on a iPod Touch 5th Gen
 * If you've already run the app, and you want to switch from in-memory to default Realm (or _vice-versa_) then you'll need to delete the app, as the two engines will conflict with each other.
 * The app can crash when switching Contacts permissions while the app is running. This is related the way threads get stored inside an [RHAddressBook singleton](https://github.com/heardrwt/RHAddressBook/blob/master/RHAddressBook/RHAddressBookSharedServices.m). I haven't verified whether this also happens in an Objective-C based app. We can either address this in a fork, or look into newer Swift-based libraries like <https://github.com/a2/Gulliver>.
 * Deleted records from the AddressBook don't sync across to the Realm database… yet. 
