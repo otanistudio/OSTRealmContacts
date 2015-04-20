@@ -15,6 +15,7 @@ The project uses an in-memory instance of Realm, but you can make a one-line cha
 * Deleted records from the AddressBook don't sync across to the Realm database… yet. 
 * Writes for each record happen in a batch within a GCD concurrent queue, but this might need to happen in a more efficient manner. We'll know for sure when this is tested by a very popular person with 25K+ records 😇.
 * While Swift makes prefix-style class namespacing "unnecessary," I still used the `OST` prefix as it still helped my brain think about the code.
+* I ran into problems with the Swift compiler when trying to include the RHAddressbook lib as part of the build target, so I had to build a separate static lib and include it that way for now. This won't work on 32-bit iOS _Simulators_ (5, 4S) as there isn't a 32-bit slice for 386 in the prebuilt RHAddressBook "universal" static library, but it will run on actual 32-bit ARM devices (verified on an iPod Touch 5th Gen)
 
 ## Thanks!
 
