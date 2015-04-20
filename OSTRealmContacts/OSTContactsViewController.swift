@@ -109,6 +109,10 @@ class OSTContactsViewController: UITableViewController, UISearchBarDelegate, UIS
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         let searchText = searchController.searchBar.text as String
         
+        if count(searchText) < 3 {
+            return
+        }
+        
         let phonePredicate = NSPredicate(format: "normalizedNumber CONTAINS %@", argumentArray: [searchText])
         let phoneResults = OSTPhoneNumber.objectsInRealm(realm, withPredicate: phonePredicate)
         
@@ -118,6 +122,7 @@ class OSTContactsViewController: UITableViewController, UISearchBarDelegate, UIS
         resultsTableController.foundPeople = searchResults
         resultsTableController.tableView.reloadData()
     }
+    
     
     // MARK: - UIStateRestoration
 
@@ -142,4 +147,5 @@ class OSTContactsViewController: UITableViewController, UISearchBarDelegate, UIS
         searchControllerSearchFieldWasFirstResponder = coder.decodeBoolForKey(OSTContactsViewController.SearchBarIsFirstResponderKey)
         searchController.searchBar.text = coder.decodeObjectForKey(OSTContactsViewController.SearchBarTextKey) as? String
     }
+
 }
