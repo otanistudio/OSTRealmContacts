@@ -18,14 +18,6 @@ class OSTContactsViewController: UITableViewController, UISearchBarDelegate, UIS
     var resultsTableController: OSTResultsTableController
     var searchController: UISearchController
     
-    var searchControllerWasActive = false
-    var searchControllerSearchFieldWasFirstResponder = false
-    
-    static let TitleKey = "ViewControllerTitleKey"
-    static let SearchControllerIsActiveKey = "SearchControllerIsActiveKey"
-    static let SearchBarTextKey = "SearchBarTextKey"
-    static let SearchBarIsFirstResponderKey = "SearchBarIsFirstResponderKey"
-    
     required init(coder aDecoder: NSCoder) {
         people = OSTPerson.allObjectsInRealm(realm).sortedResultsUsingProperty("fullName", ascending: true)
         resultsTableController = OSTResultsTableController()
@@ -54,21 +46,6 @@ class OSTContactsViewController: UITableViewController, UISearchBarDelegate, UIS
             realmNotification = realm.addNotificationBlock({ [weak self](notificationString, realm) -> Void in
                 self?.tableView.reloadData()
             })
-        }
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        // searchController state restoration
-        if searchControllerWasActive {
-            searchController.active = searchControllerWasActive
-            searchControllerWasActive = false
-            
-            if searchControllerSearchFieldWasFirstResponder {
-                searchController.searchBar.becomeFirstResponder()
-                searchControllerSearchFieldWasFirstResponder = false
-            }
         }
     }
     
@@ -121,31 +98,6 @@ class OSTContactsViewController: UITableViewController, UISearchBarDelegate, UIS
         
         resultsTableController.foundPeople = searchResults
         resultsTableController.tableView.reloadData()
-    }
-    
-    
-    // MARK: - UIStateRestoration
-
-    override func encodeRestorableStateWithCoder(coder: NSCoder) {
-        super.encodeRestorableStateWithCoder(coder)
-        coder.encodeObject(title, forKey: OSTContactsViewController.TitleKey)
-        
-        let searchDisplayControllerIsActive: Bool = searchController.active
-        coder.encodeBool(searchDisplayControllerIsActive, forKey: OSTContactsViewController.SearchControllerIsActiveKey)
-        
-        if searchDisplayControllerIsActive {
-            coder.encodeBool(searchController.searchBar.isFirstResponder(), forKey: OSTContactsViewController.SearchBarIsFirstResponderKey)
-        }
-        
-        coder.encodeObject(searchController.searchBar.text, forKey: OSTContactsViewController.SearchBarTextKey)
-    }
-    
-    override func decodeRestorableStateWithCoder(coder: NSCoder) {
-        super.decodeRestorableStateWithCoder(coder)
-        title = coder.decodeObjectForKey(OSTContactsViewController.TitleKey) as? String
-        searchControllerWasActive = coder.decodeBoolForKey(OSTContactsViewController.SearchControllerIsActiveKey)
-        searchControllerSearchFieldWasFirstResponder = coder.decodeBoolForKey(OSTContactsViewController.SearchBarIsFirstResponderKey)
-        searchController.searchBar.text = coder.decodeObjectForKey(OSTContactsViewController.SearchBarTextKey) as? String
     }
 
 }
