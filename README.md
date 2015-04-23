@@ -23,6 +23,8 @@ I did something similar in Objective-C, CoreData and `NSFetchedResultsController
 
 I wanted to learn more about Swift, gain a little bit of insight about bridging with ObjC, and play with Realm as a viable alternative to CoreData. I hope there's something others can learn here, and this provides a basis for me to learn back from all of you.
 
+Please send questions, comments, hate, or preferably, love _via_ [@otanistudio](https://twitter.com/otanistudio).
+
 ## Known Issues / TODOs
 
 * The predicates for searching through large datasets need more thought, but at 1200 records, perf is close to the Contacts app on a iPod Touch 5th Gen
