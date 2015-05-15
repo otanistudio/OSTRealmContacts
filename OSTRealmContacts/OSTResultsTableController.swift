@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import Realm
+import RealmSwift
 
 class OSTResultsTableController: UITableViewController {
-    var foundPeople: RLMResults?
+    var foundPeople: Results<OSTPerson>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +32,11 @@ class OSTResultsTableController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: OSTResultCell = tableView.dequeueReusableCellWithIdentifier(OSTResultCell.cellID, forIndexPath: indexPath) as! OSTResultCell
+
+        let ostPerson = foundPeople?[indexPath.row] as OSTPerson?
+        cell.fullNameLabel.text = ostPerson?.fullName as String!
         
-        let ostPerson = foundPeople?[UInt(indexPath.row)] as! OSTPerson
-        cell.fullNameLabel.text = ostPerson.fullName as String
-        
-        let ostPhone = ostPerson.phoneNumbers.firstObject() as! OSTPhoneNumber
+        let ostPhone = ostPerson?.phoneNumbers.first as OSTPhoneNumber!
         cell.phoneLabel.text = ostPhone.formattedNumber
         
         return cell

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C1890AD1B0584B70047F37C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1890A91B0584840047F37C /* RealmSwift.framework */; };
+		5C1890AE1B0584B70047F37C /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5C1890A91B0584840047F37C /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5C35CA831AE37BD300E73DE3 /* OSTResultsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C35CA821AE37BD300E73DE3 /* OSTResultsTableController.swift */; };
 		5C5EE1041AE438EF006D087B /* OSTResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5EE1021AE438EF006D087B /* OSTResultCell.swift */; };
 		5C5EE1051AE438EF006D087B /* OSTResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5EE1031AE438EF006D087B /* OSTResultCell.xib */; };
@@ -14,9 +16,7 @@
 		5C918C5E1AADE59F006A18FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C918C5D1AADE59F006A18FA /* Foundation.framework */; };
 		5CBC38A31AB517CA009EF24F /* libRHAddressBookUniversal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBC38A21AB517CA009EF24F /* libRHAddressBookUniversal.a */; };
 		5CBC39321AB61F4C009EF24F /* OSTContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC39311AB61F4C009EF24F /* OSTContactsViewController.swift */; };
-		5CBC39351AB63B1B009EF24F /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBC39341AB63B1B009EF24F /* Realm.framework */; };
 		5CBC39371AB63B92009EF24F /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBC39361AB63B92009EF24F /* libc++.dylib */; };
-		5CBC39391AB63C52009EF24F /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC39381AB63C52009EF24F /* RLMSupport.swift */; };
 		5CBC393C1AB63DD6009EF24F /* OSTPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC393B1AB63DD6009EF24F /* OSTPerson.swift */; };
 		5CC75F0B1AE2D0F200359B63 /* OSTPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC75F0A1AE2D0F200359B63 /* OSTPhoneNumber.swift */; };
 		5CC899641AE46BC700AB0119 /* OSTPhoneUtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC899631AE46BC700AB0119 /* OSTPhoneUtilityTests.swift */; };
@@ -42,7 +42,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5C076D431B011C3300F5745C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5C1890AE1B0584B70047F37C /* RealmSwift.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		5C1890A91B0584840047F37C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Externals/RealmSwift/RealmSwift.framework; sourceTree = "<group>"; };
 		5C35CA821AE37BD300E73DE3 /* OSTResultsTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTResultsTableController.swift; sourceTree = "<group>"; };
 		5C5EE1021AE438EF006D087B /* OSTResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTResultCell.swift; path = Views/OSTResultCell.swift; sourceTree = "<group>"; };
 		5C5EE1031AE438EF006D087B /* OSTResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OSTResultCell.xib; path = Views/OSTResultCell.xib; sourceTree = "<group>"; };
@@ -64,9 +78,7 @@
 		5CBC38A11AB517CA009EF24F /* RHSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHSource.h; sourceTree = "<group>"; };
 		5CBC38A21AB517CA009EF24F /* libRHAddressBookUniversal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRHAddressBookUniversal.a; path = lib/RHAddressBook/libRHAddressBookUniversal.a; sourceTree = "<group>"; };
 		5CBC39311AB61F4C009EF24F /* OSTContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTContactsViewController.swift; sourceTree = "<group>"; };
-		5CBC39341AB63B1B009EF24F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Externals/Realm/Realm.framework; sourceTree = "<group>"; };
 		5CBC39361AB63B92009EF24F /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
-		5CBC39381AB63C52009EF24F /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RLMSupport.swift; path = Externals/Realm/RLMSupport.swift; sourceTree = "<group>"; };
 		5CBC393B1AB63DD6009EF24F /* OSTPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTPerson.swift; path = Models/OSTPerson.swift; sourceTree = "<group>"; };
 		5CC75F0A1AE2D0F200359B63 /* OSTPhoneNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTPhoneNumber.swift; path = Models/OSTPhoneNumber.swift; sourceTree = "<group>"; };
 		5CC899631AE46BC700AB0119 /* OSTPhoneUtilityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTPhoneUtilityTests.swift; sourceTree = "<group>"; };
@@ -92,7 +104,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CBC39371AB63B92009EF24F /* libc++.dylib in Frameworks */,
-				5CBC39351AB63B1B009EF24F /* Realm.framework in Frameworks */,
+				5C1890AD1B0584B70047F37C /* RealmSwift.framework in Frameworks */,
 				5C918C5E1AADE59F006A18FA /* Foundation.framework in Frameworks */,
 				5CFCF8271AAD267300B63FF2 /* AddressBook.framework in Frameworks */,
 				5CBC38A31AB517CA009EF24F /* libRHAddressBookUniversal.a in Frameworks */,
@@ -139,15 +151,6 @@
 			path = Private;
 			sourceTree = "<group>";
 		};
-		5CBC39331AB63A7D009EF24F /* Realm */ = {
-			isa = PBXGroup;
-			children = (
-				5CBC39381AB63C52009EF24F /* RLMSupport.swift */,
-				5CBC39341AB63B1B009EF24F /* Realm.framework */,
-			);
-			name = Realm;
-			sourceTree = "<group>";
-		};
 		5CBC393A1AB63C84009EF24F /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +176,14 @@
 				5C5EE1031AE438EF006D087B /* OSTResultCell.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		5CE7C3F11AFC601500C9EC52 /* RealmSwift */ = {
+			isa = PBXGroup;
+			children = (
+				5C1890A91B0584840047F37C /* RealmSwift.framework */,
+			);
+			name = RealmSwift;
 			sourceTree = "<group>";
 		};
 		5CFCF77A1AAD203800B63FF2 = {
@@ -246,7 +257,7 @@
 		5CFCF7A81AAD21BD00B63FF2 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
-				5CBC39331AB63A7D009EF24F /* Realm */,
+				5CE7C3F11AFC601500C9EC52 /* RealmSwift */,
 				5CFCF8151AAD23C200B63FF2 /* RHAddressBook */,
 			);
 			name = Externals;
@@ -271,6 +282,8 @@
 				5CFCF77F1AAD203800B63FF2 /* Sources */,
 				5CFCF7801AAD203800B63FF2 /* Frameworks */,
 				5CFCF7811AAD203800B63FF2 /* Resources */,
+				5CE7C3F41AFC621C00C9EC52 /* Run Script */,
+				5C076D431B011C3300F5745C /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -357,6 +370,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5CE7C3F41AFC621C00C9EC52 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5CFCF77F1AAD203800B63FF2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -365,7 +395,6 @@
 				5CFCF78B1AAD203800B63FF2 /* OSTStartViewController.swift in Sources */,
 				5C5EE1041AE438EF006D087B /* OSTResultCell.swift in Sources */,
 				5C918C5C1AAD5129006A18FA /* OSTABManager.swift in Sources */,
-				5CBC39391AB63C52009EF24F /* RLMSupport.swift in Sources */,
 				5CE468751AB6A4A8000CAAC5 /* OSTContactCell.swift in Sources */,
 				5CBC393C1AB63DD6009EF24F /* OSTPerson.swift in Sources */,
 				5CBC39321AB61F4C009EF24F /* OSTContactsViewController.swift in Sources */,
@@ -499,10 +528,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Externals/Realm",
+					"$(PROJECT_DIR)/Externals/RealmSwift",
+					"$(PROJECT_DIR)/Externals/RealmSwift/RealmSwift.framework/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -528,10 +558,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Externals/Realm",
+					"$(PROJECT_DIR)/Externals/RealmSwift",
+					"$(PROJECT_DIR)/Externals/RealmSwift/RealmSwift.framework/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -560,6 +591,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/RealmSwift/Frameworks",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -579,6 +611,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/RealmSwift/Frameworks",
 				);
 				INFOPLIST_FILE = OSTRealmContactsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

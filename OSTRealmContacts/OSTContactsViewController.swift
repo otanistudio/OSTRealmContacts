@@ -7,19 +7,19 @@
 //
 
 import UIKit
-import Realm
+import RealmSwift
 
 class OSTContactsViewController: UITableViewController, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating {
 
     let realm = OSTABManager.ostRealm()
-    var realmNotification: RLMNotificationToken?
-    var people: RLMResults
+    var realmNotification: NotificationToken?
+    var people: Results<OSTPerson>
     
     var resultsTableController: OSTResultsTableController
     var searchController: UISearchController
     
     required init(coder aDecoder: NSCoder) {
-        people = OSTPerson.allObjectsInRealm(realm).sortedResultsUsingProperty("fullName", ascending: true)
+        people = realm.objects(OSTPerson).sorted("fullName", ascending: true)
         resultsTableController = OSTResultsTableController()
 
         searchController = UISearchController(searchResultsController: resultsTableController)
@@ -50,7 +50,7 @@ class OSTContactsViewController: UITableViewController, UISearchBarDelegate, UIS
     }
     
     deinit {
-        realm.removeNotification(realmNotification)
+        realm.removeNotification(realmNotification!)
     }
     
     // MARK: - Table view data source
@@ -67,11 +67,11 @@ class OSTContactsViewController: UITableViewController, UISearchBarDelegate, UIS
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell : OSTContactCell = tableView.dequeueReusableCellWithIdentifier(OSTContactCell.cellID, forIndexPath: indexPath) as! OSTContactCell
-        let ostPerson = people[UInt(indexPath.row)] as! OSTPerson
+        let ostPerson = people[indexPath.row] as OSTPerson
         cell.fullNameLabel.text = ostPerson.fullName as String
-        
-        let ostPhone = ostPerson.phoneNumbers.firstObject() as! OSTPhoneNumber
-        cell.phoneNumberLabel.text = ostPhone.formattedNumber
+
+        let ostPhone = ostPerson.phoneNumbers.first
+        cell.phoneNumberLabel.text = ostPhone?.formattedNumber
         return cell
     }
     
@@ -89,12 +89,8 @@ class OSTContactsViewController: UITableViewController, UISearchBarDelegate, UIS
         if count(searchText) < 3 {
             return
         }
-        
-        let phonePredicate = NSPredicate(format: "normalizedNumber CONTAINS %@", argumentArray: [searchText])
-        let phoneResults = OSTPhoneNumber.objectsInRealm(realm, withPredicate: phonePredicate)
-        
-        let searchPredicate = NSPredicate(format: "fullName CONTAINS[c] %@ OR ANY phoneNumbers IN %@", argumentArray: [searchText, phoneResults])
-        let searchResults = OSTPerson.objectsInRealm(realm, withPredicate: searchPredicate)
+        let searchPredicate = NSPredicate(format: "fullName CONTAINS[c] %@ OR ANY phoneNumbers.normalizedNumber CONTAINS %@", searchText, searchText)
+        let searchResults = realm.objects(OSTPerson).filter(searchPredicate)
         
         resultsTableController.foundPeople = searchResults
         resultsTableController.tableView.reloadData()

@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import Realm
+import RealmSwift
 
 class OSTABManager : NSObject, NilLiteralConvertible {
     var ab = RHAddressBook()
-    let realm = OSTABManager.ostRealm()
     
     required init(nilLiteral: ()) {
         super.init()
@@ -31,10 +30,10 @@ class OSTABManager : NSObject, NilLiteralConvertible {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    class func ostRealm() -> RLMRealm {
+    class func ostRealm() -> Realm {
         // Switch return statements for in-memory vs. persisted Realms
-        return RLMRealm.inMemoryRealmWithIdentifier("OSTABManagerRealm");
-        //return RLMRealm.defaultRealm()
+        return Realm(inMemoryIdentifier: "OSTABManagerRealm")
+        // return Realm(path: Realm.defaultPath)
     }
     
     func addressBookDidChange(notification: NSNotification) {
@@ -50,16 +49,15 @@ class OSTABManager : NSObject, NilLiteralConvertible {
         if hasPermission() {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
                 let backgroundRealm = OSTABManager.ostRealm()
-                backgroundRealm.beginWriteTransaction()
                 let people = self.ab.peopleOrderedByUsersPreference as! [RHPerson]
-                for rhPerson in people {
-                    self.writeRecord(realm: backgroundRealm, rhPerson: rhPerson)
-                }
-                backgroundRealm.commitWriteTransaction()
-                
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    success?()
-                })
+                backgroundRealm.write({ () -> Void in
+                    for rhPerson in people {
+                        self.writeRecord(realm: backgroundRealm, rhPerson: rhPerson)
+                    }
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        success?()
+                    })
+                });
             })
         } else {
             failure?(message: "no permission")
@@ -71,29 +69,31 @@ class OSTABManager : NSObject, NilLiteralConvertible {
         return (rhPerson.compositeName == nil || rhPhoneNumbers == nil)
     }
     
-    private func writeRecord(#realm: RLMRealm, rhPerson: RHPerson) {
+    private func writeRecord(#realm: Realm, rhPerson: RHPerson) {
         if shouldSkip(rhPerson) {
             return;
         }
         
         let rhPhoneNumbers = rhPerson.phoneNumbers.values as Array?
-        var rlmPhoneNumbers = RLMArray(objectClassName: OSTPhoneNumber.className())
+
+        var rlmPhoneNumbers = List<OSTPhoneNumber>()
         for rhNumber in rhPhoneNumbers! {
             let formattedNumString = rhNumber as! String
             let normalizedNumString = OSTPhoneUtility.normalizedPhoneStringFromString(formattedNumString) as String
-            let phoneNumber = OSTPhoneNumber(normalizedNumber: normalizedNumString, formattedNumber: formattedNumString)
-            rlmPhoneNumbers.addObject(phoneNumber)
+            var phoneNumber = OSTPhoneNumber()
+            phoneNumber.normalizedNumber = normalizedNumString
+            phoneNumber.formattedNumber = formattedNumString
+            rlmPhoneNumbers.append(phoneNumber)
         }
         
-        var ostPerson = OSTPerson(
-            fullName: rhPerson.compositeName,
-            firstName: rhPerson.firstName != nil ? rhPerson.firstName : "",
-            lastName: rhPerson.lastName != nil ? rhPerson.lastName : "",
-            phoneNumbers: rlmPhoneNumbers
-        )
+        var ostPerson = OSTPerson()
+        ostPerson.fullName = rhPerson.compositeName
+        ostPerson.firstName = rhPerson.firstName != nil ? rhPerson.firstName : ""
+        ostPerson.lastName = rhPerson.lastName != nil ? rhPerson.lastName : ""
+        ostPerson.phoneNumbers = rlmPhoneNumbers
         
         // TODO: Enforce that this happens in the expected thread and transaction
-        OSTPerson.createOrUpdateInRealm(realm, withObject: ostPerson)
+        realm.add(ostPerson, update: true)
     }
     
     func requestAuthorization(completion:(isGranted: Bool, permissionError: NSError?)->()) {

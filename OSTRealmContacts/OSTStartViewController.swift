@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class OSTStartViewController: UIViewController {
 
@@ -18,7 +19,7 @@ class OSTStartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkPermission()
+        checkPermission()        
     }
 
     override func didReceiveMemoryWarning() {

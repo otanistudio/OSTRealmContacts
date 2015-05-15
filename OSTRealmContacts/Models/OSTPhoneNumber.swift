@@ -7,35 +7,14 @@
 //
 
 import Foundation
-import Realm
+import RealmSwift
 
-class OSTPhoneNumber: RLMObject {
+class OSTPhoneNumber: Object {
     dynamic var normalizedNumber: String = ""
     dynamic var formattedNumber: String = ""
-    
-    init!(normalizedNumber: String, formattedNumber: String) {
-        super.init()
-        self.normalizedNumber = normalizedNumber
-        self.formattedNumber = formattedNumber
-    }
     
     override class func primaryKey() -> String {
         return "normalizedNumber"
     }
-    
-    override init() {
-        super.init()
-    }
-    
-    override init!(object value: AnyObject!, schema: RLMSchema!) {
-        super.init(object: value, schema: schema)
-    }
-    
-    override init!(object: AnyObject!) {
-        super.init(object: object)
-    }
-    
-    override init!(objectSchema schema: RLMObjectSchema!) {
-        super.init(objectSchema: schema)
-    }
+
 }
