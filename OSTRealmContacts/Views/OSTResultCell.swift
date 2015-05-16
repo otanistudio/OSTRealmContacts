@@ -13,16 +13,15 @@ class OSTResultCell: UITableViewCell {
     static let cellID = "ResultCell"
     
     @IBOutlet weak var fullNameLabel: UILabel!
-    @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var phoneNumberTextView: UITextView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    internal func configureCell(text: String) {
+        // Creating a new attributed string with the attributes we care about
+        // does a better job at avoiding undesired state during cell reuse
+        let paragraphStyle: AnyObject? = self.phoneNumberTextView.attributedText.attribute(NSParagraphStyleAttributeName, atIndex: 0, effectiveRange: nil)
+        let fontAttr: AnyObject? = self.phoneNumberTextView.attributedText.attribute(NSFontAttributeName, atIndex: 0, effectiveRange: nil)
+        let attributes = [NSParagraphStyleAttributeName : paragraphStyle!, NSFontAttributeName: fontAttr!]
+        
+        self.phoneNumberTextView.attributedText = NSAttributedString(string: text, attributes: attributes)
     }
-    
-    override func prepareForReuse() {
-        fullNameLabel.text = ""
-        phoneLabel.text = ""
-    }
-    
 }

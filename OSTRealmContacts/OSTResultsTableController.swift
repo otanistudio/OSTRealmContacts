@@ -37,7 +37,7 @@ class OSTResultsTableController: UITableViewController {
         cell.fullNameLabel.text = ostPerson?.fullName as String!
         
         let ostPhone = ostPerson?.phoneNumbers.first as OSTPhoneNumber!
-        cell.phoneLabel.text = ostPhone.formattedNumber
+        cell.configureCell(ostPhone.formattedNumber)
         
         return cell
     }

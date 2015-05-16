@@ -47,8 +47,6 @@ class OSTContactsViewController: UITableViewController, UISearchBarDelegate, UIS
                 self?.tableView.reloadData()
             })
         }
-        
-        tableView.reloadData()
     }
     
     deinit {
@@ -74,17 +72,8 @@ class OSTContactsViewController: UITableViewController, UISearchBarDelegate, UIS
 
         let ostPhone = ostPerson.phoneNumbers.first
         let phoneString: String = ostPhone!.formattedNumber
-        configureCell(cell, text: phoneString)
+        cell.configureCell(phoneString)
         return cell
-    }
-    
-    private func configureCell(cell: OSTContactCell, text: String) {
-        // preserve attributes initially configured from the storyboard/xib, exclusive of the string/link
-        let paragraphStyle: AnyObject? = cell.phoneNumberTextView.attributedText.attribute(NSParagraphStyleAttributeName, atIndex: 0, effectiveRange: nil)
-        let fontAttr: AnyObject? = cell.phoneNumberTextView.attributedText.attribute(NSFontAttributeName, atIndex: 0, effectiveRange: nil)
-        let attributes = [NSParagraphStyleAttributeName : paragraphStyle!, NSFontAttributeName: fontAttr!]
-        
-        cell.phoneNumberTextView.attributedText = NSAttributedString(string: text, attributes: attributes)
     }
     
     // MARK: - UISearchBarDelegate

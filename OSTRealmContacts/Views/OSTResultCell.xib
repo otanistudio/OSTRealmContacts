@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -16,33 +16,41 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Found Result" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiE-R0-eob">
                         <rect key="frame" x="8" y="12" width="442" height="20"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(000) 000-0000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aT0-iO-VNw">
-                        <rect key="frame" x="458" y="11" width="134" height="21"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zWX-QR-1t4">
+                        <rect key="frame" x="458" y="5" width="134" height="32"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="134" id="VoD-1a-m8q"/>
-                            <constraint firstAttribute="height" constant="21" id="WOE-2D-4ZY"/>
+                            <constraint firstAttribute="width" constant="134" id="Ozs-rZ-aiW"/>
+                            <constraint firstAttribute="height" constant="32" id="qM1-PV-Bvl"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <attributedString key="attributedText">
+                            <fragment content="+1(213) 555-1111">
+                                <attributes>
+                                    <font key="NSFont" size="15" name="HelveticaNeue-Medium"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <textInputTraits key="textInputTraits"/>
+                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
+                    </textView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="aT0-iO-VNw" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="1KF-ha-Dqe"/>
-                    <constraint firstAttribute="centerY" secondItem="aT0-iO-VNw" secondAttribute="centerY" id="8Fn-p7-IWT"/>
+                    <constraint firstItem="zWX-QR-1t4" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="2MB-iO-EUg"/>
+                    <constraint firstItem="zWX-QR-1t4" firstAttribute="leading" secondItem="IiE-R0-eob" secondAttribute="trailing" constant="8" id="B3Q-x8-QLV"/>
                     <constraint firstItem="IiE-R0-eob" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Lkr-SD-cD5"/>
-                    <constraint firstItem="aT0-iO-VNw" firstAttribute="leading" secondItem="IiE-R0-eob" secondAttribute="trailing" constant="8" id="aZF-L8-4hA"/>
                     <constraint firstItem="IiE-R0-eob" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="fgk-KS-fsO"/>
+                    <constraint firstItem="zWX-QR-1t4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-3" id="lf6-Ur-a8f"/>
                     <constraint firstAttribute="bottomMargin" secondItem="IiE-R0-eob" secondAttribute="bottom" constant="3" id="qgs-Ju-Nsb"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="fullNameLabel" destination="IiE-R0-eob" id="Rtu-Xj-K9s"/>
-                <outlet property="phoneLabel" destination="aT0-iO-VNw" id="wb0-QI-bTe"/>
+                <outlet property="phoneNumberTextView" destination="zWX-QR-1t4" id="FOb-IE-caA"/>
             </connections>
         </tableViewCell>
     </objects>
