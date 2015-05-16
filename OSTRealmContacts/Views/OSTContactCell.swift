@@ -11,7 +11,7 @@ import UIKit
 class OSTContactCell: UITableViewCell {
 
     @IBOutlet weak var fullNameLabel: UILabel!
-    @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var phoneNumberTextView: UITextView!
     
     static let cellID = "OSTContactCellIdentifer"
     
@@ -25,10 +25,4 @@ class OSTContactCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    override func prepareForReuse() {
-        fullNameLabel.text = ""
-        phoneNumberLabel.text = ""
-    }
-
 }

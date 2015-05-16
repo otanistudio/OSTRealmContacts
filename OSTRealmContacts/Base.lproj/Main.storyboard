@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bKc-jS-2yh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bKc-jS-2yh">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -71,40 +71,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OSTContactCellIdentifer" id="e6h-m5-ZP6" customClass="OSTContactCell" customModule="OSTRealmContacts" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OSTContactCellIdentifer" id="e6h-m5-ZP6" customClass="OSTContactCell" customModule="OSTRealmContacts" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e6h-m5-ZP6" id="Yk2-Vq-xh4">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(650) 555-8888" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOy-TU-kKB">
-                                            <rect key="frame" x="458" y="11" width="134" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="ewg-Ug-udQ"/>
-                                                <constraint firstAttribute="width" constant="134" id="tfC-7i-cER"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2w-1r-RV2">
                                             <rect key="frame" x="8" y="12" width="442" height="20"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pin-ds-cVS" userLabel="phoneNumberTextView">
+                                            <rect key="frame" x="458" y="5" width="134" height="32"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="32" id="eqA-vP-G7y"/>
+                                                <constraint firstAttribute="width" constant="134" id="hL8-ua-mEL"/>
+                                            </constraints>
+                                            <attributedString key="attributedText">
+                                                <fragment content="888-555-1212">
+                                                    <attributes>
+                                                        <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                                        <font key="NSOriginalFont" size="15" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
+                                        </textView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="B2w-1r-RV2" firstAttribute="leading" secondItem="Yk2-Vq-xh4" secondAttribute="leadingMargin" id="2t9-3c-SnW"/>
-                                        <constraint firstAttribute="centerY" secondItem="XOy-TU-kKB" secondAttribute="centerY" id="VGL-SI-jKX"/>
-                                        <constraint firstItem="XOy-TU-kKB" firstAttribute="trailing" secondItem="Yk2-Vq-xh4" secondAttribute="trailingMargin" id="ZUd-Gb-AQe"/>
+                                        <constraint firstItem="pin-ds-cVS" firstAttribute="leading" secondItem="B2w-1r-RV2" secondAttribute="trailing" constant="8" id="aQO-Yt-b1K"/>
+                                        <constraint firstItem="pin-ds-cVS" firstAttribute="top" secondItem="Yk2-Vq-xh4" secondAttribute="topMargin" constant="-3" id="bQC-t7-ari"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="B2w-1r-RV2" secondAttribute="bottom" constant="3" id="mRH-je-0Vm"/>
-                                        <constraint firstItem="XOy-TU-kKB" firstAttribute="leading" secondItem="B2w-1r-RV2" secondAttribute="trailing" constant="8" id="pik-x9-QBQ"/>
                                         <constraint firstItem="B2w-1r-RV2" firstAttribute="top" secondItem="Yk2-Vq-xh4" secondAttribute="topMargin" constant="4" id="s4A-o4-jq4"/>
+                                        <constraint firstItem="pin-ds-cVS" firstAttribute="trailing" secondItem="Yk2-Vq-xh4" secondAttribute="trailingMargin" id="sBE-Qj-9SN"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="fullNameLabel" destination="B2w-1r-RV2" id="uVI-XR-pQ5"/>
-                                    <outlet property="phoneNumberLabel" destination="XOy-TU-kKB" id="a69-ET-agE"/>
+                                    <outlet property="phoneNumberTextView" destination="pin-ds-cVS" id="QQZ-mc-He2"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
