@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C1890AD1B0584B70047F37C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1890A91B0584840047F37C /* RealmSwift.framework */; };
-		5C1890AE1B0584B70047F37C /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5C1890A91B0584840047F37C /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5C35CA831AE37BD300E73DE3 /* OSTResultsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C35CA821AE37BD300E73DE3 /* OSTResultsTableController.swift */; };
 		5C5EE1041AE438EF006D087B /* OSTResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5EE1021AE438EF006D087B /* OSTResultCell.swift */; };
 		5C5EE1051AE438EF006D087B /* OSTResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5EE1031AE438EF006D087B /* OSTResultCell.xib */; };
@@ -21,6 +19,8 @@
 		5CC75F0B1AE2D0F200359B63 /* OSTPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC75F0A1AE2D0F200359B63 /* OSTPhoneNumber.swift */; };
 		5CC899641AE46BC700AB0119 /* OSTPhoneUtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC899631AE46BC700AB0119 /* OSTPhoneUtilityTests.swift */; };
 		5CC899651AE46C4800AB0119 /* OSTPhoneUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE4686A1AB67F34000CAAC5 /* OSTPhoneUtility.swift */; };
+		5CE3C7E11B06FC25008FCC1B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1890A91B0584840047F37C /* RealmSwift.framework */; };
+		5CE3C7E21B06FC25008FCC1B /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1890A91B0584840047F37C /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5CE4686B1AB67F34000CAAC5 /* OSTPhoneUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE4686A1AB67F34000CAAC5 /* OSTPhoneUtility.swift */; };
 		5CE468751AB6A4A8000CAAC5 /* OSTContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE468741AB6A4A8000CAAC5 /* OSTContactCell.swift */; };
 		5CFCF7891AAD203800B63FF2 /* OSTContactsAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFCF7881AAD203800B63FF2 /* OSTContactsAppDelegate.swift */; };
@@ -43,14 +43,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		5C076D431B011C3300F5745C /* CopyFiles */ = {
+		5CE3C7E31B06FC25008FCC1B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5C1890AE1B0584B70047F37C /* RealmSwift.framework in CopyFiles */,
+				5CE3C7E21B06FC25008FCC1B /* RealmSwift.framework in Embed Frameworks */,
 			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -104,7 +105,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CBC39371AB63B92009EF24F /* libc++.dylib in Frameworks */,
-				5C1890AD1B0584B70047F37C /* RealmSwift.framework in Frameworks */,
+				5CE3C7E11B06FC25008FCC1B /* RealmSwift.framework in Frameworks */,
 				5C918C5E1AADE59F006A18FA /* Foundation.framework in Frameworks */,
 				5CFCF8271AAD267300B63FF2 /* AddressBook.framework in Frameworks */,
 				5CBC38A31AB517CA009EF24F /* libRHAddressBookUniversal.a in Frameworks */,
@@ -283,7 +284,7 @@
 				5CFCF7801AAD203800B63FF2 /* Frameworks */,
 				5CFCF7811AAD203800B63FF2 /* Resources */,
 				5CE7C3F41AFC621C00C9EC52 /* Run Script */,
-				5C076D431B011C3300F5745C /* CopyFiles */,
+				5CE3C7E31B06FC25008FCC1B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -383,7 +384,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "";
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework/strip-frameworks.sh\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -531,8 +532,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Externals/RealmSwift",
 					"$(PROJECT_DIR)/Externals/RealmSwift/RealmSwift.framework/Frameworks",
+					"$(PROJECT_DIR)/Externals/RealmSwift",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -561,8 +562,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Externals/RealmSwift",
 					"$(PROJECT_DIR)/Externals/RealmSwift/RealmSwift.framework/Frameworks",
+					"$(PROJECT_DIR)/Externals/RealmSwift",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
