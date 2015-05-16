@@ -57,7 +57,7 @@ class OSTABManager : NSObject, NilLiteralConvertible {
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         success?()
                     })
-                });
+                })
             })
         } else {
             failure?(message: "no permission")
