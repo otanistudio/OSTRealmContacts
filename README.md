@@ -45,4 +45,5 @@ Please send questions, comments, hate, or preferably, love _via_ [@otanistudio](
 
 © 2015 Robert Otani <http://otanistudio.com>
 
-OSTRealmContacts is Licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+OSTRealmContacts is Licensed under the MIT License.
+
